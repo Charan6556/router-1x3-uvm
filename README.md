@@ -1,4 +1,4 @@
-# 1×3 Packet Router — RTL Design and UVM Verification
+# 1×3 Packet Router: RTL Design and UVM Verification
 
 A SystemVerilog/UVM verification project for an 8-bit packet router with one input and three output FIFOs. The testbench combines directed boundary cases, constrained-random packets, parity-error injection, independent monitors, a packet scoreboard, and functional coverage.
 
