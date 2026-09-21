@@ -1,0 +1,26 @@
+SVA AND TIMING STATUS
+
+SVA
+The supplied router_assertions.sv contains five FIFO properties, three FSM
+properties, and bind statements for router_fifo and router_fsm. The file is
+preserved byte-for-byte in sva/.
+
+The supplied testbench and original launch command do not include this file.
+No successful bound-assertion run appears in the supplied evidence. The new
+launcher offers --sva for an explicit future run; successful assertion execution
+is not claimed. Compiling properties alone would not establish that they pass.
+
+TIMING
+Source: evidence/timing.log
+Tool: OpenROAD edf00dff99f6c40d67a30c0e22a8191c5d2ed9d6
+Recorded result: [ERROR ORD-2010] no technology has been read.
+The run stopped at sta.tcl line 11.
+
+The original SDC is retained byte-for-byte in synthesis/experimental/.
+It specifies a 10 ns clock, 0.2 ns clock uncertainty and 1 ns I/O delays.
+These are input constraints, not measured timing performance.
+
+The experimental STA script retains the original timing commands with portable
+paths and an external SKY130_LIB setting. It has not been validated with an STA
+tool. Additional technology setup is required for use within OpenROAD.
+No achieved frequency, slack, critical path or timing closure is reported.

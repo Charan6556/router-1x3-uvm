@@ -1,0 +1,26 @@
+REPOSITORY CLEANUP VALIDATION
+
+Source: uvm_router.zip and four user-supplied screenshots.
+The original ZIP was not modified.
+
+PASS: All 27 testbench files retained; comments added to 19 files.
+PASS: All retained RTL/UVM/SVA/netlist source tokens match the ZIP.
+PASS: RTL, SVA, archived netlists, constraints and original logs are byte-for-byte preserved.
+PASS: Both regenerated netlists match archived netlist tokens.
+PASS: Local RTL and testbench include paths resolve.
+PASS: All active Markdown file links resolve; figure links remain comments.
+PASS: All four launch scripts pass Bash syntax checks.
+PASS: VCS launcher shell checks handle both modes, paths with spaces, arguments, error summaries, assertion messages, incomplete output and missing/failed compiler.
+NOTE: Launcher checks use a stub executable, not VCS or a UVM simulation.
+PASS: Git ignore rules exclude generated products and retain evidence logs and source.
+
+LOCAL TOOL RUNS
+RTL lint: Verilator 5.052, exit 0, zero warnings and zero errors.
+Generic synthesis: Yosys 0.69+post, exit 0; original warnings retained.
+SKY130 synthesis: Yosys 0.69+post, exit 0; area 23804.080000 um^2.
+Logs: reports/evidence/cleanup_*.log.
+
+NOT RERUN
+UVM regression and mutation test: VCS unavailable in this environment.
+SVA execution, gate-level simulation, formal equivalence and STA.
+Historical UVM results are supported by screenshots, not a fresh run.

@@ -1,0 +1,30 @@
+UVM REGRESSION — SUPPLIED RUN
+
+Source: evidence/regression.png
+Original screenshot: 2026-09-20 at 9.46.28 PM
+Simulator path shown: VCS X-2025.06-SP1 / UVM 1.2
+Test: router_test
+Random seed: not visible in supplied evidence
+
+Expected packets: 5024
+Actual packets:   5024
+Matched packets:  5024
+Mismatched:       0
+
+Remaining expected queues: exp0=0 exp1=0 exp2=0
+Remaining actual queues:   act0=0 act1=0 act2=0
+
+UVM_INFO:    17
+UVM_WARNING: 0
+UVM_ERROR:   0
+UVM_FATAL:   0
+
+Coverage samples: 5024
+Defined functional coverage: 100.00%
+Simulation time shown: 2061730000 ps
+
+The supplied source sends 24 directed packets followed by 5000 random packets,
+consistent with the screenshot totals. This is one recorded run, not evidence
+of a multiple-seed regression. The complete simulation log and seed were not
+present in the ZIP. This UVM run was not repeated during cleanup.
+

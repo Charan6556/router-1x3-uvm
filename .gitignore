@@ -1,0 +1,39 @@
+# Local build products
+/build/
+/work/
+/obj_dir/
+/csrc/
+/simv
+/simv.daidir/
+/simv.vdb/
+/vcs
+/ucli.key
+/vc_hdrs.h
+/tr_db.log
+/result.zip
+/ACCELLERA_OVL_VHDL_LIB/
+*.vcd
+*.vpd
+*.fsdb
+*.wlf
+*.log
+
+# Keep the reviewed logs that support the published results
+!/reports/evidence/*.log
+
+# Editor and macOS files
+.DS_Store
+__MACOSX/
+._*
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Machine-specific shell and simulator configuration
+.bashrc
+.bash_profile
+.bash_logout
+synopsys_sim.setup
+

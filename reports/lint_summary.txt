@@ -1,0 +1,23 @@
+RTL LINT
+
+Archived sources: evidence/lint.log and evidence/lint.png
+Tool: Verilator 5.052, 2026-09-05 build
+Top: router_top
+Archived options: --lint-only -Wall -Wno-fatal --sv
+Warnings: 0
+Errors:   0
+
+The screenshot first shows three unused-parameter warnings, then a corrected
+run with warning/error counts both equal to zero. The ZIP contains the corrected
+router_sync.v and the clean final lint.log.
+
+Cleanup rerun: scripts/lint.sh
+Evidence: evidence/cleanup_lint.log
+Options: --lint-only -Wall --sv -Irtl rtl/router_top.v --top-module router_top
+Exit status: 0
+Warnings: 0
+Errors:   0
+
+The rerun treats warnings as fatal. This is an RTL lint result; it does not
+establish UVM simulation or bound-assertion execution.
+

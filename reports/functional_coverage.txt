@@ -1,0 +1,28 @@
+FUNCTIONAL COVERAGE — SUPPLIED PASSING RUN
+
+Source: evidence/regression.png
+Model: tb/functional_coverage.sv
+Samples: 5024 complete input packets observed by the write monitor
+
+DESTINATION:                100.00%
+PAYLOAD_SIZE:               100.00%
+ERROR_PACKET:               100.00%
+LENGTH_BOUNDARY:            100.00%
+DEST_SIZE:                  100.00%
+DEST_ERROR:                 100.00%
+SIZE_ERROR:                 100.00%
+DEST_SIZE_ERROR:            100.00%
+TOTAL FUNCTIONAL COVERAGE:  100.00%
+
+Destination bins: output0, output1, output2
+Payload-size bins: 1-13, 14-30, 31-63 bytes (one bin per range)
+Error bins: normal parity, bad parity
+Boundary bins: 1, 13, 14, 30, 31, 63 bytes
+Three-way cross: 3 destinations x 3 size groups x 2 error types = 18 bins
+
+Coverage describes only the defined input-packet model. It is not code coverage,
+assertion coverage, coverage of every byte value, or proof of all DUT behavior.
+The subscriber classifies parity from input bytes; it does not check the DUT
+error output. The failing mutation screenshot also shows 100% coverage, which
+illustrates why scoreboard correctness checks are needed separately.
+

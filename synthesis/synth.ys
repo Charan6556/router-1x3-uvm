@@ -1,0 +1,22 @@
+# Run from the repository root, normally through scripts/synth_generic.sh.
+read_verilog -Irtl rtl/router_top.v
+
+hierarchy -check -top router_top
+
+proc
+opt
+
+fsm
+opt
+
+memory
+opt
+
+techmap
+opt
+
+stat
+
+# Preserve the archived netlist in synthesis/ when repeating the flow.
+write_verilog -noattr build/generic/router_netlist.v
+

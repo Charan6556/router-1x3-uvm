@@ -1,0 +1,353 @@
+archive_entry,uncompressed_bytes,disposition
+uvm_router/,0,original directory layout replaced
+__MACOSX/._uvm_router,212,omitted: macOS metadata
+uvm_router/read_driver1.sv,1373,retained: tb/read_driver1.sv
+__MACOSX/uvm_router/._read_driver1.sv,212,omitted: macOS metadata
+uvm_router/csrc/,0,original directory layout replaced
+__MACOSX/uvm_router/._csrc,212,omitted: macOS metadata
+uvm_router/write_agent.sv,826,retained: tb/write_agent.sv
+__MACOSX/uvm_router/._write_agent.sv,212,omitted: macOS metadata
+uvm_router/scoreboard.sv,7232,retained: tb/scoreboard.sv
+__MACOSX/uvm_router/._scoreboard.sv,212,omitted: macOS metadata
+uvm_router/.DS_Store,6148,omitted: macOS metadata
+__MACOSX/uvm_router/._.DS_Store,120,omitted: macOS metadata
+uvm_router/router_reg.v,2084,retained: rtl/router_reg.v
+__MACOSX/uvm_router/._router_reg.v,212,omitted: macOS metadata
+uvm_router/write_sequencer.sv,304,retained: tb/write_sequencer.sv
+__MACOSX/uvm_router/._write_sequencer.sv,212,omitted: macOS metadata
+uvm_router/simv.daidir/,0,original directory layout replaced
+__MACOSX/uvm_router/._simv.daidir,212,omitted: macOS metadata
+uvm_router/read_agent1.sv,803,retained: tb/read_agent1.sv
+__MACOSX/uvm_router/._read_agent1.sv,212,omitted: macOS metadata
+uvm_router/ACCELLERA_OVL_VHDL_LIB/,0,original directory layout replaced
+__MACOSX/uvm_router/._ACCELLERA_OVL_VHDL_LIB,212,omitted: macOS metadata
+uvm_router/read_monitor1.sv,1746,retained: tb/read_monitor1.sv
+__MACOSX/uvm_router/._read_monitor1.sv,212,omitted: macOS metadata
+uvm_router/lint.log,304,retained: reports/evidence/lint.log
+uvm_router/virtual_seqr.sv,430,retained: tb/virtual_seqr.sv
+__MACOSX/uvm_router/._virtual_seqr.sv,212,omitted: macOS metadata
+uvm_router/vc_hdrs.h,3490,omitted: generated simulator artifact
+__MACOSX/uvm_router/._vc_hdrs.h,212,omitted: macOS metadata
+uvm_router/synth.ysy,336,omitted: superseded optional helper
+__MACOSX/uvm_router/._synth.ysy,220,omitted: macOS metadata
+uvm_router/.bashrc,492,omitted: machine-specific environment
+__MACOSX/uvm_router/._.bashrc,212,omitted: macOS metadata
+uvm_router/virtual_sequence.sv,3294,retained: tb/virtual_sequence.sv
+__MACOSX/uvm_router/._virtual_sequence.sv,212,omitted: macOS metadata
+uvm_router/read_sequencer1.sv,305,retained: tb/read_sequencer1.sv
+__MACOSX/uvm_router/._read_sequencer1.sv,212,omitted: macOS metadata
+uvm_router/testbench.sv,3483,retained: tb/testbench.sv
+__MACOSX/uvm_router/._testbench.sv,212,omitted: macOS metadata
+uvm_router/functional_coverage.sv,3099,retained: tb/functional_coverage.sv
+__MACOSX/uvm_router/._functional_coverage.sv,212,omitted: macOS metadata
+uvm_router/dump.vcd,26291862,omitted: generated simulator artifact
+__MACOSX/uvm_router/._dump.vcd,212,omitted: macOS metadata
+uvm_router/interface.sv,2304,retained: tb/interface.sv
+__MACOSX/uvm_router/._interface.sv,212,omitted: macOS metadata
+uvm_router/write_xtn.sv,868,retained: tb/write_xtn.sv
+__MACOSX/uvm_router/._write_xtn.sv,212,omitted: macOS metadata
+uvm_router/.bash_logout,18,omitted: machine-specific environment
+__MACOSX/uvm_router/._.bash_logout,212,omitted: macOS metadata
+uvm_router/router_fsm.v,3811,retained: rtl/router_fsm.v
+__MACOSX/uvm_router/._router_fsm.v,212,omitted: macOS metadata
+uvm_router/simv,1278952,omitted: generated simulator artifact
+__MACOSX/uvm_router/._simv,212,omitted: macOS metadata
+uvm_router/router_netlist.v,65432,retained: synthesis/router_netlist.v
+uvm_router/test.sv,786,retained: tb/test.sv
+__MACOSX/uvm_router/._test.sv,212,omitted: macOS metadata
+uvm_router/router_sky130_netlist.v,217303,retained: synthesis/router_sky130_netlist.v
+__MACOSX/uvm_router/._router_sky130_netlist.v,220,omitted: macOS metadata
+uvm_router/tr_db.log,488,omitted: generated simulator artifact
+__MACOSX/uvm_router/._tr_db.log,212,omitted: macOS metadata
+uvm_router/run.sh,811,retained: run.sh
+__MACOSX/uvm_router/._run.sh,212,omitted: macOS metadata
+uvm_router/synthesis.log,74472,retained: reports/evidence/synthesis.log
+uvm_router/router_fifo.v,2015,retained: rtl/router_fifo.v
+__MACOSX/uvm_router/._router_fifo.v,212,omitted: macOS metadata
+uvm_router/synth_sky130.ys,1144,retained: synthesis/synth_sky130.ys
+__MACOSX/uvm_router/._synth_sky130.ys,220,omitted: macOS metadata
+uvm_router/dump_vpd.do,54,omitted: superseded optional helper
+__MACOSX/uvm_router/._dump_vpd.do,212,omitted: macOS metadata
+uvm_router/constraints.sdc,955,retained: synthesis/experimental/constraints.sdc
+__MACOSX/uvm_router/._constraints.sdc,220,omitted: macOS metadata
+uvm_router/synth.ys,150,retained: synthesis/synth.ys
+uvm_router/read_sequencer3.sv,305,retained: tb/read_sequencer3.sv
+__MACOSX/uvm_router/._read_sequencer3.sv,212,omitted: macOS metadata
+uvm_router/vcs,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/._vcs,212,omitted: macOS metadata
+uvm_router/router_sequences.sv,2244,retained: tb/router_sequences.sv
+__MACOSX/uvm_router/._router_sequences.sv,212,omitted: macOS metadata
+uvm_router/work/,0,original directory layout replaced
+__MACOSX/uvm_router/._work,212,omitted: macOS metadata
+uvm_router/ucli.key,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/._ucli.key,212,omitted: macOS metadata
+uvm_router/router_sync.v,2632,retained: rtl/router_sync.v
+__MACOSX/uvm_router/._router_sync.v,212,omitted: macOS metadata
+uvm_router/router_assertions.sv,2755,retained: sva/router_assertions.sv
+__MACOSX/uvm_router/._router_assertions.sv,212,omitted: macOS metadata
+uvm_router/sky130_synthesis.log,113224,retained: reports/evidence/sky130_synthesis.log
+__MACOSX/uvm_router/._sky130_synthesis.log,220,omitted: macOS metadata
+uvm_router/read_sequencer2.sv,305,retained: tb/read_sequencer2.sv
+__MACOSX/uvm_router/._read_sequencer2.sv,212,omitted: macOS metadata
+uvm_router/router_top.v,3196,retained: rtl/router_top.v
+__MACOSX/uvm_router/._router_top.v,212,omitted: macOS metadata
+uvm_router/environment.sv,2007,retained: tb/environment.sv
+__MACOSX/uvm_router/._environment.sv,212,omitted: macOS metadata
+uvm_router/read_xtn.sv,355,retained: tb/read_xtn.sv
+__MACOSX/uvm_router/._read_xtn.sv,212,omitted: macOS metadata
+uvm_router/write_driver.sv,2010,retained: tb/write_driver.sv
+__MACOSX/uvm_router/._write_driver.sv,212,omitted: macOS metadata
+uvm_router/write_monitor.sv,2510,retained: tb/write_monitor.sv
+__MACOSX/uvm_router/._write_monitor.sv,212,omitted: macOS metadata
+uvm_router/read_agent2.sv,803,retained: tb/read_agent2.sv
+__MACOSX/uvm_router/._read_agent2.sv,212,omitted: macOS metadata
+uvm_router/read_driver3.sv,1315,retained: tb/read_driver3.sv
+__MACOSX/uvm_router/._read_driver3.sv,212,omitted: macOS metadata
+uvm_router/read_monitor2.sv,1752,retained: tb/read_monitor2.sv
+__MACOSX/uvm_router/._read_monitor2.sv,212,omitted: macOS metadata
+uvm_router/simv.vdb/,0,original directory layout replaced
+__MACOSX/uvm_router/._simv.vdb,212,omitted: macOS metadata
+uvm_router/.bash_profile,141,omitted: machine-specific environment
+__MACOSX/uvm_router/._.bash_profile,212,omitted: macOS metadata
+uvm_router/read_agent3.sv,803,retained: tb/read_agent3.sv
+__MACOSX/uvm_router/._read_agent3.sv,212,omitted: macOS metadata
+uvm_router/sta.tcl,474,retained: synthesis/experimental/sta.tcl
+__MACOSX/uvm_router/._sta.tcl,220,omitted: macOS metadata
+uvm_router/read_driver2.sv,1315,retained: tb/read_driver2.sv
+__MACOSX/uvm_router/._read_driver2.sv,212,omitted: macOS metadata
+uvm_router/read_monitor3.sv,1746,retained: tb/read_monitor3.sv
+__MACOSX/uvm_router/._read_monitor3.sv,212,omitted: macOS metadata
+uvm_router/synopsys_sim.setup,761,omitted: machine-specific environment
+__MACOSX/uvm_router/._synopsys_sim.setup,212,omitted: macOS metadata
+uvm_router/timing.log,367,retained: reports/evidence/timing.log
+__MACOSX/uvm_router/._timing.log,220,omitted: macOS metadata
+uvm_router/csrc/archive.0/,0,original directory layout replaced
+__MACOSX/uvm_router/csrc/._archive.0,212,omitted: macOS metadata
+uvm_router/csrc/uM9F1_0x2aB.c,1026,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._uM9F1_0x2aB.c,212,omitted: macOS metadata
+uvm_router/csrc/rmar.o,1240,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar.o,212,omitted: macOS metadata
+uvm_router/csrc/rmar.h,233,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar.h,212,omitted: macOS metadata
+uvm_router/csrc/rmar_nd.o,1248,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar_nd.o,212,omitted: macOS metadata
+uvm_router/csrc/diag/,0,original directory layout replaced
+__MACOSX/uvm_router/csrc/._diag,212,omitted: macOS metadata
+uvm_router/csrc/Makefile.hsopt,1213,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._Makefile.hsopt,212,omitted: macOS metadata
+uvm_router/csrc/cginfo.json,8277,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._cginfo.json,212,omitted: macOS metadata
+uvm_router/csrc/rmar_llvm_0_0.o,1976,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar_llvm_0_0.o,212,omitted: macOS metadata
+uvm_router/csrc/.DS_Store,6148,omitted: macOS metadata
+__MACOSX/uvm_router/csrc/._.DS_Store,120,omitted: macOS metadata
+uvm_router/csrc/uvm_dpi.o,20184,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._uvm_dpi.o,212,omitted: macOS metadata
+uvm_router/csrc/.vcs.cflags.record,68,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._.vcs.cflags.record,212,omitted: macOS metadata
+uvm_router/csrc/import_dpic.h,1359,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._import_dpic.h,212,omitted: macOS metadata
+uvm_router/csrc/Makefile,4904,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._Makefile,212,omitted: macOS metadata
+uvm_router/csrc/objs/,0,original directory layout replaced
+__MACOSX/uvm_router/csrc/._objs,212,omitted: macOS metadata
+uvm_router/csrc/filelist.pli,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist.pli,212,omitted: macOS metadata
+uvm_router/csrc/hsim/,0,original directory layout replaced
+__MACOSX/uvm_router/csrc/._hsim,212,omitted: macOS metadata
+uvm_router/csrc/filelist.cu,720,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist.cu,212,omitted: macOS metadata
+uvm_router/csrc/rmapats.h,70760,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmapats.h,212,omitted: macOS metadata
+uvm_router/csrc/rmapats.o,2096,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmapats.o,212,omitted: macOS metadata
+uvm_router/csrc/interfaceF.347.o,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._interfaceF.347.o,212,omitted: macOS metadata
+uvm_router/csrc/product_timestamp,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._product_timestamp,212,omitted: macOS metadata
+uvm_router/csrc/_347_archive_1.so,8414928,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/.__347_archive_1.so,212,omitted: macOS metadata
+uvm_router/csrc/rmar.c,195,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar.c,212,omitted: macOS metadata
+uvm_router/csrc/cgproc.347.json,29368,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._cgproc.347.json,212,omitted: macOS metadata
+uvm_router/csrc/uM9F1_0x2aB.o,1800,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._uM9F1_0x2aB.o,212,omitted: macOS metadata
+uvm_router/csrc/filelist.hsopt,504,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist.hsopt,212,omitted: macOS metadata
+uvm_router/csrc/SIM_l.o,568,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._SIM_l.o,212,omitted: macOS metadata
+uvm_router/csrc/filelist.dpi,520,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist.dpi,212,omitted: macOS metadata
+uvm_router/csrc/dynamic_list.txt,18,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._dynamic_list.txt,212,omitted: macOS metadata
+uvm_router/csrc/rmapats_mop.o,8936,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmapats_mop.o,212,omitted: macOS metadata
+uvm_router/csrc/uvm_dpi.d,732,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._uvm_dpi.d,212,omitted: macOS metadata
+uvm_router/csrc/rmar0.h,114,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar0.h,212,omitted: macOS metadata
+uvm_router/csrc/filelist,1174,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist,212,omitted: macOS metadata
+uvm_router/csrc/clean.sh,158,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._clean.sh,212,omitted: macOS metadata
+uvm_router/csrc/obj.347.DB,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._obj.347.DB,212,omitted: macOS metadata
+uvm_router/csrc/.vcs.cflags.record.1,68,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._.vcs.cflags.record.1,212,omitted: macOS metadata
+uvm_router/csrc/filelist.hsopt.objs,134,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist.hsopt.objs,212,omitted: macOS metadata
+uvm_router/csrc/checksum,246,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._checksum,212,omitted: macOS metadata
+uvm_router/csrc/cgincr.sdb,17097,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._cgincr.sdb,212,omitted: macOS metadata
+uvm_router/csrc/rmar_llvm_0_1.o,1056,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmar_llvm_0_1.o,212,omitted: macOS metadata
+uvm_router/csrc/filelist.hsopt.llvm2_0.objs,45,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._filelist.hsopt.llvm2_0.objs,212,omitted: macOS metadata
+uvm_router/csrc/.9.9.0.compview.txt,773,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._.9.9.0.compview.txt,212,omitted: macOS metadata
+uvm_router/csrc/cwidincr.db,408,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._cwidincr.db,212,omitted: macOS metadata
+uvm_router/csrc/rmapats.c,1294,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmapats.c,212,omitted: macOS metadata
+uvm_router/csrc/localsym.347.txt,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._localsym.347.txt,212,omitted: macOS metadata
+uvm_router/csrc/rmapats.m,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/._rmapats.m,212,omitted: macOS metadata
+uvm_router/simv.daidir/binmap.sdb,262304,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._binmap.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcs_rebuild,451,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcs_rebuild,212,omitted: macOS metadata
+uvm_router/simv.daidir/build_db,482,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._build_db,212,omitted: macOS metadata
+uvm_router/simv.daidir/elabmoddb.sdb,15657,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._elabmoddb.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsim_lvl.db,1832,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsim_lvl.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/hslevel_callgraph.sdb,2405,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._hslevel_callgraph.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/.daidir_complete,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._.daidir_complete,212,omitted: macOS metadata
+uvm_router/simv.daidir/.DS_Store,6148,omitted: macOS metadata
+__MACOSX/uvm_router/simv.daidir/._.DS_Store,120,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_partition.db,6952,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_partition.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_vcselabref.db,1,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_vcselabref.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vc_hdrs.o,13328,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vc_hdrs.o,212,omitted: macOS metadata
+uvm_router/simv.daidir/EUELAB.DB/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.daidir/._EUELAB.DB,212,omitted: macOS metadata
+uvm_router/simv.daidir/pcc.sdb,2985,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._pcc.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/constraint.sdb,12222,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._constraint.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/vce.sdb,437,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vce.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/dsa.sdb,135689,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._dsa.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/saifNetInfo.db,2,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._saifNetInfo.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/prof.sdb,93855,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._prof.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsdef.db,36,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsdef.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_midd.db,357,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_midd.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsim_name.db,758,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsim_name.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/constraint_string_index,85,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._constraint_string_index,212,omitted: macOS metadata
+uvm_router/simv.daidir/.normal_done,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._.normal_done,212,omitted: macOS metadata
+uvm_router/simv.daidir/covg_defs,4555,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._covg_defs,212,omitted: macOS metadata
+uvm_router/simv.daidir/rmapats.dat,2828,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._rmapats.dat,212,omitted: macOS metadata
+uvm_router/simv.daidir/.vcs.timestamp,30145,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._.vcs.timestamp,212,omitted: macOS metadata
+uvm_router/simv.daidir/_347_archive_1.so,8414928,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/.__347_archive_1.so,212,omitted: macOS metadata
+uvm_router/simv.daidir/debug_dump/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.daidir/._debug_dump,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_mnmn.db,154,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_mnmn.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/rmapats.so,28856,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._rmapats.so,212,omitted: macOS metadata
+uvm_router/simv.daidir/vc_hdrs.c,17048,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vc_hdrs.c,212,omitted: macOS metadata
+uvm_router/simv.daidir/stitch_nsparam.dat,4,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._stitch_nsparam.dat,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsim_fegate.db,12288,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsim_fegate.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsim_checkloop_hsimvce.db,4,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsim_checkloop_hsimvce.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/hslevel_level.sdb,1855,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._hslevel_level.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_master_hsim_elabout.db,37568,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_master_hsim_elabout.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsim_uds.db,123,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsim_uds.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_hsim_elab.db,64772,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_hsim_elab.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/nsparam.dat,8,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._nsparam.dat,212,omitted: macOS metadata
+uvm_router/simv.daidir/DPIFuncTaskList,1030,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._DPIFuncTaskList,212,omitted: macOS metadata
+uvm_router/simv.daidir/cgname.json,297,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._cgname.json,212,omitted: macOS metadata
+uvm_router/simv.daidir/eblklvl.db,32,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._eblklvl.db,212,omitted: macOS metadata
+uvm_router/simv.daidir/pcxpxmr.dat,181,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._pcxpxmr.dat,212,omitted: macOS metadata
+uvm_router/simv.daidir/hsscan_cfg.dat,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._hsscan_cfg.dat,212,omitted: macOS metadata
+uvm_router/simv.daidir/tt.sdb,253466,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._tt.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/hslevel_rtime_level.sdb,252,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._hslevel_rtime_level.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_master_hsim_virtintf_info.dat,208,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_master_hsim_virtintf_info.dat,212,omitted: macOS metadata
+uvm_router/simv.daidir/vcselab_misc_partitionDbg.db,805,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/._vcselab_misc_partitionDbg.db,212,omitted: macOS metadata
+uvm_router/simv.vdb/.mode64,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.vdb/._.mode64,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.vdb/._snps,212,omitted: macOS metadata
+uvm_router/csrc/archive.0/_347_archive_1.a.info,99,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/archive.0/.__347_archive_1.a.info,212,omitted: macOS metadata
+uvm_router/csrc/archive.0/_347_archive_1.a,9422856,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/archive.0/.__347_archive_1.a,212,omitted: macOS metadata
+uvm_router/csrc/objs/amcQw_d.o,7560,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/objs/._amcQw_d.o,212,omitted: macOS metadata
+uvm_router/csrc/objs/rts.347.info,0,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/objs/._rts.347.info,212,omitted: macOS metadata
+uvm_router/csrc/hsim/hsim.sdb,2012,omitted: generated simulator artifact
+__MACOSX/uvm_router/csrc/hsim/._hsim.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/EUELAB.DB/euclide_data.sdb,2627,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/EUELAB.DB/._euclide_data.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/debug_dump/vir.sdb,1601249,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/debug_dump/._vir.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/debug_dump/topmodules,7,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/debug_dump/._topmodules,212,omitted: macOS metadata
+uvm_router/simv.daidir/debug_dump/AllModulesSkeletons.sdb,1629,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/debug_dump/._AllModulesSkeletons.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/debug_dump/HsimSigOptDb.sdb,250,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/debug_dump/._HsimSigOptDb.sdb,212,omitted: macOS metadata
+uvm_router/simv.daidir/debug_dump/.version,93,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.daidir/debug_dump/._.version,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.vdb/snps/._coverage,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/db/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.vdb/snps/coverage/._db,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/db/testdata/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.vdb/snps/coverage/db/._testdata,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/db/testdata/test/,0,original directory layout replaced
+__MACOSX/uvm_router/simv.vdb/snps/coverage/db/testdata/._test,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/db/testdata/test/testbench.inst.xml,933,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.vdb/snps/coverage/db/testdata/test/._testbench.inst.xml,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/db/testdata/test/testbench.cumulative.xml,1197,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.vdb/snps/coverage/db/testdata/test/._testbench.cumulative.xml,212,omitted: macOS metadata
+uvm_router/simv.vdb/snps/coverage/db/testdata/test/siminfo.xml,299,omitted: generated simulator artifact
+__MACOSX/uvm_router/simv.vdb/snps/coverage/db/testdata/test/._siminfo.xml,212,omitted: macOS metadata

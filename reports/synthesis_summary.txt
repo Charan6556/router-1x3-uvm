@@ -1,0 +1,43 @@
+YOSYS SYNTHESIS
+
+Tool: Yosys 0.69+post
+Build: 143eb14f9cc55d6f8927e68523b0c9d2166ed02c
+Top: router_top
+
+GENERIC FLOW
+Evidence: evidence/synthesis.log and evidence/generic_synthesis.png
+Netlist: synthesis/router_netlist.v
+Completed successfully in the archived run and the cleanup rerun.
+Cell count including submodules: 2026
+Hierarchy: router_fifo x 3, router_fsm x 1, router_reg x 1, router_sync x 1
+
+SKY130 HD FLOW
+Evidence: evidence/sky130_synthesis.log
+Netlist: synthesis/router_sky130_netlist.v (flattened)
+Library: sky130_fd_sc_hd__tt_025C_1v80.lib
+Corner: typical / 25 C / 1.8 V
+Reported total mapped cell area: 23804.080000 square micrometres
+FIFO area per instance:           6880.348800 square micrometres
+FSM area:                         484.214400 square micrometres
+Register block area:             1890.563200 square micrometres
+Synchronization block area:       788.256000 square micrometres
+Sequential-element area:        16315.648000 square micrometres (68.54%)
+Final reported cells: 1537, including 6 $scopeinfo metadata entries
+The report states that $scopeinfo area is unknown.
+
+Both flows report two Yosys warnings (one unique message) about limited support
+for the FIFO's tristate assignments. ABC additionally reports multi-output
+library-cell and combinational-network messages in the SKY130 flow. Synthesis
+is not described as warning-free.
+
+CLEANUP RERUNS
+scripts/synth_generic.sh: exit status 0
+scripts/synth_sky130.sh:  exit status 0
+Mapped area reproduced: 23804.080000 square micrometres
+Evidence: evidence/cleanup_synthesis.log, evidence/cleanup_sky130_synthesis.log
+Both regenerated netlists match the supplied netlists after ignoring comments
+and whitespace. The supplied netlist files remain byte-for-byte unchanged.
+
+These are synthesis and cell-area results. No placed-and-routed result,
+gate-level simulation, formal equivalence proof or timing closure is claimed.
+

@@ -1,0 +1,31 @@
+CHECKER VALIDATION — SUPPLIED MUTATION-TEST RESULT
+
+Source: evidence/mutation.png
+Original screenshot: 2026-09-20 at 9.38.39 PM
+Context supplied with the project: deliberately corrupted DUT output
+
+Expected packets: 74
+Actual packets:   74
+Matched packets:  0
+Mismatched:       74
+
+Remaining expected queues: exp0=0 exp1=0 exp2=0
+Remaining actual queues:   act0=0 act1=0 act2=0
+
+UVM_INFO:    17
+UVM_WARNING: 0
+UVM_ERROR:   2516
+UVM_FATAL:   0
+
+Simulation time shown: 30420000 ps
+Coverage samples: 74
+Defined functional coverage in this failed run: 100.00%
+
+The screenshot demonstrates detection of 74 mismatched packets in this run.
+The scoreboard can emit multiple byte-level errors for one mismatched packet;
+the UVM error total therefore differs from the packet mismatch total.
+
+The exact mutation patch, test seed and full simulation log are not included.
+No mutation was applied during cleanup, and no exact reproduction is claimed.
+The separately supplied passing-run screenshot records 5024 matched packets.
+
