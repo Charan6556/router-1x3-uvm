@@ -15,7 +15,7 @@ router-1x3-uvm/
 │   └── experimental/    Experimental timing setup and SDC constraints
 ├── scripts/             Lint and synthesis launchers
 ├── reports/             Results, provenance and supporting evidence
-├── docs/                Testbench reading guide and figure placeholders
+├── docs/                Testbench reading guide and architecture figures
 ├── run.sh               VCS/UVM simulation launcher
 └── .gitignore
 ```
@@ -51,8 +51,7 @@ The write monitor reconstructs input packets and publishes them to both the scor
 
 Expected and actual queues are kept separately for each destination. Either monitor may finish first; the second arrival triggers comparison with the oldest queued packet for that port. End-of-test checks detect unmatched packets, unequal counts and mismatches.
 
-**Figure placeholder:** add `docs/uvm_architecture.png` after drawing the testbench hierarchy.
-<!-- Enable after the file is added: ![UVM architecture](docs/uvm_architecture.png) -->
+![UVM Verification Architecture](docs/uvm_architecture.png)
 
 For a guided code review, start with the [testbench reading guide](docs/testbench_guide.md).
 
@@ -153,4 +152,4 @@ Yosys reports two limited-tristate-support warnings for the FIFO's high-impedanc
 - **Error checking:** bad parity is injected and forwarded bytes are compared. The scoreboard does not currently check the timing/value of the DUT `error` output.
 - **Traffic scope:** the default sequence completes one packet's writer/reader pair before starting the next. Read monitors assume continuous output bytes after the header. The timeout read sequence exists but is not started by the default test; timeout recovery, mid-packet reset and overlapping packets need dedicated verification.
 - **Checker scope:** transaction data fields use two-state `bit` types, so the current comparison does not provide dedicated X/Z detection. No gate-level simulation or formal equivalence result is claimed.
-- **Figures:** router and UVM architecture images will be added under `docs/`.
+- **Figures:** UVM architecture is included under `docs/`; router architecture will be added separately.
