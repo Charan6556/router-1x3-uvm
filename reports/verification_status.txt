@@ -1,11 +1,11 @@
-SVA AND TIMING STATUS
+SVA AND EXPERIMENTAL OPENROAD STATUS
 
 SVA
 The repository contains five FIFO properties, three FSM properties, and bind
 statements for router_fifo and router_fsm in sva/router_assertions.sv.
 
-A Cadence Xcelium 26.03-s001 regression was run on 2026-09-21 with the bound
-assertion file included. Xcelium compiled and elaborated router_fifo_sva and
+The recorded summary reports a Cadence Xcelium 26.03-s001 regression on
+2026-09-21 with the bound assertion file included. Xcelium compiled and elaborated router_fifo_sva and
 router_fsm_sva. The same run completed 5,024 packets with:
 
 expected   = 5024
@@ -19,9 +19,10 @@ failure messages returned no matches in the completed regression.
 
 Therefore, no assertion failures were observed in this Xcelium regression.
 This is simulation evidence, not formal proof or exhaustive assertion coverage.
-See xcelium_sva_regression.txt for the regression summary.
+See xcelium_sva_regression.txt for the regression summary and provenance limits.
+The full raw log is not committed; final cleanup did not rerun Xcelium.
 
-TIMING
+EXPERIMENTAL OPENROAD — INCOMPLETE
 Source: evidence/timing.log
 Tool: OpenROAD edf00dff99f6c40d67a30c0e22a8191c5d2ed9d6
 Recorded result: [ERROR ORD-2010] no technology has been read.
@@ -34,4 +35,5 @@ These are input constraints, not measured timing performance.
 The experimental STA script retains the original timing commands with portable
 paths and an external SKY130_LIB setting. Additional technology setup is still
 required for a validated STA flow. No achieved frequency, slack, critical path
-or timing closure is reported here.
+or timing closure is reported here. No completed STA or place-and-route result
+is claimed. See synthesis/experimental/README.md.

@@ -21,3 +21,7 @@ Errors:   0
 The rerun treats warnings as fatal. This is an RTL lint result; it does not
 establish UVM simulation or bound-assertion execution.
 
+
+FINAL CLEANUP RERUN
+Verilator 5.052; scripts/lint.sh exited 0 with 0 warnings and 0 errors.
+Evidence: evidence/final_lint.log.

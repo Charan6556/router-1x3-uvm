@@ -1,5 +1,7 @@
 # Reading the testbench
 
+Use the [UVM architecture](uvm_architecture.png) alongside this guide. Cadence Xcelium is the active UVM, scoreboard, functional-coverage and SVA flow; see the [run instructions](../README.md#run-the-project) and [recorded results](../reports/README.md).
+
 The comments follow the existing short, lowercase `//comment` style. They explain intent around the less obvious code without changing the RTL or testbench behavior.
 
 | Start here | What to look for |

@@ -1,15 +1,16 @@
-# Architecture figures
+# Architecture and testbench guide
 
-The README currently describes both architectures in text. These image files are intentionally pending; no broken image links are displayed.
+Both architecture figures are included at their final paths and displayed in the root README. The supplied PNGs are preserved at their original resolution.
 
-| Planned file | Content to show |
+| Figure | What it shows |
 |---|---|
-| `router_architecture.png` | Input data into `router_reg`, register data into three FIFOs, FSM control, destination selection and timeout logic in `router_sync`, plus the three output ports |
-| `uvm_architecture.png` | Test/environment, virtual sequence and sequencer, one write agent, three read agents, DUT/interface, scoreboard, and coverage subscriber |
+| [Router architecture](router_architecture.png) | FSM, register, synchronizer, three output FIFOs and their data/control/status connections through `router_top` |
+| [UVM architecture](uvm_architecture.png) | Test/environment hierarchy, virtual sequence and sequencer, active agents, interface/DUT, monitor analysis connections, scoreboard, coverage and bound assertions |
 
-For the router diagram, distinguish data paths from control/status connections. The RTL blocks are connected through `router_top`; they are not a simple serial chain.
+The router diagram follows [router_top.v](../rtl/router_top.v). All three FIFO data inputs receive `router_reg.dout`; destination selection controls the FIFO write enables. `router_sync` produces output-valid and timeout-reset signals.
 
-For the UVM diagram, show sequence traffic toward drivers, monitor analysis traffic toward the scoreboard, and a separate connection from the write monitor to coverage. Label read agent 1 as output 0, read agent 2 as output 1, and read agent 3 as output 2.
+The UVM diagram follows [testbench.sv](../tb/testbench.sv) and [environment.sv](../tb/environment.sv). Read agents 1, 2 and 3 service outputs 0, 1 and 2 respectively. The virtual sequencer holds agent-sequencer handles. Monitor analysis ports feed the scoreboard, and the write monitor also feeds functional coverage.
 
-After adding the images, replace each README placeholder with its commented Markdown image line. SVG files may be used instead if the filenames and links are updated together.
+The clock period shown is the simulation stimulus. The SVA annotation refers to the [recorded Xcelium regression](../reports/xcelium_sva_regression.txt); neither figure establishes timing closure or exhaustive verification.
 
+Continue with the [testbench reading guide](testbench_guide.md), [evidence index](../reports/README.md), or [repository preparation notes](cleanup_notes.md).

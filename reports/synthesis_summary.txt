@@ -41,3 +41,12 @@ and whitespace. The supplied netlist files remain byte-for-byte unchanged.
 These are synthesis and cell-area results. No placed-and-routed result,
 gate-level simulation, formal equivalence proof or timing closure is claimed.
 
+
+FINAL CLEANUP
+Generic synthesis rerun: Yosys 0.69+post, exit 0, 2026 cells.
+Evidence: evidence/final_synthesis.log.
+The regenerated generic netlist matches the archived netlist after ignoring
+comments and whitespace.
+SKY130 mapping was not rerun during final cleanup: the Liberty dependency was
+unavailable locally. The preserved original and earlier cleanup logs both
+report area 23804.080000 square micrometres (23804.08 µm²).

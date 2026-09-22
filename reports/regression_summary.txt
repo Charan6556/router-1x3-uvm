@@ -1,4 +1,7 @@
-UVM REGRESSION — SUPPLIED RUN
+HISTORICAL UVM REGRESSION — SUPPLIED RUN
+
+The active Xcelium result is recorded in xcelium_sva_regression.txt.
+This earlier screenshot is retained for provenance.
 
 Source: evidence/regression.png
 Original screenshot: 2026-09-20 at 9.46.28 PM

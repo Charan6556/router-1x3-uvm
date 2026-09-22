@@ -1,26 +1,46 @@
-REPOSITORY CLEANUP VALIDATION
+FINAL REPOSITORY CLEANUP VALIDATION
+Review date: 2026-09-21 (America/Denver)
+Starting main commit: 9c1a8c1f6e20839102ba343ac1d687db06c00eac
 
-Source: uvm_router.zip and four user-supplied screenshots.
-The original ZIP was not modified.
+SOURCE AND EVIDENCE
+All 5 RTL files, 27 testbench files, the SVA file, 2 archived synthesis netlists
+and SDC constraints remain byte-for-byte unchanged from the starting commit.
+All 11 pre-existing evidence files remain byte-for-byte unchanged.
+The latest supplied PNGs are copied byte-for-byte to:
+  docs/uvm_architecture.png    (7400 x 5620)
+  docs/router_architecture.png (7400 x 5100)
+Both figures are displayed in the README and linked from docs/README.md.
 
-PASS: All 27 testbench files retained; comments added to 19 files.
-PASS: All retained RTL/UVM/SVA/netlist source tokens match the ZIP.
-PASS: RTL, SVA, archived netlists, constraints and original logs are byte-for-byte preserved.
-PASS: Both regenerated netlists match archived netlist tokens.
-PASS: Local RTL and testbench include paths resolve.
-PASS: All active Markdown file links resolve; figure links remain comments.
-PASS: All four launch scripts pass Bash syntax checks.
-PASS: VCS launcher shell checks handle both modes, paths with spaces, arguments, error summaries, assertion messages, incomplete output and missing/failed compiler.
-NOTE: Launcher checks use a stub executable, not VCS or a UVM simulation.
-PASS: Git ignore rules exclude generated products and retain evidence logs and source.
+LOCAL CHECKS
+All active Markdown file links, image paths and heading anchors resolve.
+All RTL and testbench local include files resolve.
+The source manifest current hashes and all evidence checksums match.
+No stale tool names, figure planning text or temporary files are present in
+tracked project content. Historical simulator names remain only for provenance
+and generated-file ignore rules.
+All four launch scripts pass Bash syntax checks.
+Xcelium launcher shell checks pass for argument forwarding, paths with spaces,
+default and explicit SVA, missing/failed simulator, stale/incomplete logs,
+UVM errors/fatals, Xcelium diagnostics and all eight SVA error messages.
+These launcher checks use a stub executable, not a simulator.
+Git ignore checks exclude generated products and retain reports/source.
 
-LOCAL TOOL RUNS
-RTL lint: Verilator 5.052, exit 0, zero warnings and zero errors.
-Generic synthesis: Yosys 0.69+post, exit 0; original warnings retained.
-SKY130 synthesis: Yosys 0.69+post, exit 0; area 23804.080000 um^2.
-Logs: reports/evidence/cleanup_*.log.
+FRESH LOCAL TOOL RUNS
+RTL lint: Verilator 5.052, exit 0, 0 warnings and 0 errors.
+Evidence: reports/evidence/final_lint.log.
+Generic synthesis: Yosys 0.69+post, exit 0, 2026 cells including submodules.
+Two limited-tristate-support warnings remain in the log.
+Evidence: reports/evidence/final_synthesis.log.
+The regenerated generic netlist matches the archived netlist code after
+ignoring comments and whitespace.
 
-NOT RERUN
-UVM regression and mutation test: VCS unavailable in this environment.
-SVA execution, gate-level simulation, formal equivalence and STA.
-Historical UVM results are supported by screenshots, not a fresh run.
+RECORDED RESULTS, NOT RERUN IN FINAL CLEANUP
+Xcelium: 5024 expected/actual/matched, 0 mismatches, all queues empty,
+100% defined functional coverage, 0 UVM warnings/errors/fatals and no observed
+assertion failures. The existing summary is retained; xrun is unavailable here.
+Mutation: supplied historical screenshot shows 74 mismatches and 2516 UVM
+errors. Exact mutation source/seed/full log are unavailable.
+SKY130 mapping: original and earlier cleanup Yosys logs both report
+23804.080000 square micrometres. The Liberty dependency is unavailable locally.
+OpenROAD: experimental/incomplete; recorded ORD-2010 failure. No completed STA,
+timing closure or place-and-route result is claimed.

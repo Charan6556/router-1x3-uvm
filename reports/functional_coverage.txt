@@ -1,6 +1,7 @@
-FUNCTIONAL COVERAGE — SUPPLIED PASSING RUN
+FUNCTIONAL COVERAGE — RECORDED XCELIUM REGRESSION
 
-Source: evidence/regression.png
+Primary summary: xcelium_sva_regression.txt (Cadence Xcelium, 2026-09-21)
+Historical corroboration: evidence/regression.png (earlier VCS run)
 Model: tb/functional_coverage.sv
 Samples: 5024 complete input packets observed by the write monitor
 

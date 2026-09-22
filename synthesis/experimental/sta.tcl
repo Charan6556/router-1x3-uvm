@@ -1,5 +1,5 @@
 #experimental timing setup; no successful timing result is recorded
-#use a standalone OpenSTA installation; the original OpenROAD run failed
+#the recorded OpenROAD run failed; this script is not a validated STA flow
 #OpenROAD needs technology setup that is not supplied by this script
 set SCRIPT_DIR [file dirname [file normalize [info script]]]
 if {![info exists ::env(SKY130_LIB)]} {

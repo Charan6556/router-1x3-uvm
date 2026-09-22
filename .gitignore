@@ -2,6 +2,12 @@
 /build/
 /work/
 /obj_dir/
+/xcelium.d/
+/INCA_libs/
+/cov_work/
+/xrun.history
+/xrun.key
+*.shm/
 /csrc/
 /simv
 /simv.daidir/
@@ -27,6 +33,8 @@ __MACOSX/
 ._*
 *.swp
 *.swo
+*.tmp
+*.bak
 *~
 .vscode/
 .idea/

@@ -1,0 +1,1498 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, AppleClang clang++ 21.0.0.21000101)
+
+-- Executing script file `synthesis/synth.ys' --
+
+1. Executing Verilog-2005 frontend: rtl/router_top.v
+Parsing Verilog input from `rtl/router_top.v' to AST representation.
+rtl/router_fifo.v:78: Warning: Yosys has only limited support for tri-state logic at the moment.
+rtl/router_fifo.v:105: Warning: Yosys has only limited support for tri-state logic at the moment.
+Generating RTLIL representation for module `\router_fifo'.
+Generating RTLIL representation for module `\router_fsm'.
+Generating RTLIL representation for module `\router_reg'.
+Generating RTLIL representation for module `\router_sync'.
+Generating RTLIL representation for module `\router_top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \router_top
+Used module:     \router_fifo
+Used module:     \router_sync
+Used module:     \router_fsm
+Used module:     \router_reg
+
+2.2. Analyzing design hierarchy..
+Top module:  \router_top
+Used module:     \router_fifo
+Used module:     \router_sync
+Used module:     \router_fsm
+Used module:     \router_reg
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$rtl/router_sync.v:118$163 in module router_sync.
+Marked 3 switch rules as full_case in process $proc$rtl/router_sync.v:90$157 in module router_sync.
+Marked 3 switch rules as full_case in process $proc$rtl/router_sync.v:62$151 in module router_sync.
+Marked 2 switch rules as full_case in process $proc$rtl/router_sync.v:46$150 in module router_sync.
+Marked 1 switch rules as full_case in process $proc$rtl/router_sync.v:30$146 in module router_sync.
+Marked 1 switch rules as full_case in process $proc$rtl/router_sync.v:21$144 in module router_sync.
+Marked 1 switch rules as full_case in process $proc$rtl/router_reg.v:107$139 in module router_reg.
+Marked 1 switch rules as full_case in process $proc$rtl/router_reg.v:98$136 in module router_reg.
+Marked 2 switch rules as full_case in process $proc$rtl/router_reg.v:85$126 in module router_reg.
+Marked 1 switch rules as full_case in process $proc$rtl/router_reg.v:76$124 in module router_reg.
+Marked 3 switch rules as full_case in process $proc$rtl/router_reg.v:60$116 in module router_reg.
+Marked 1 switch rules as full_case in process $proc$rtl/router_reg.v:51$113 in module router_reg.
+Marked 3 switch rules as full_case in process $proc$rtl/router_reg.v:38$109 in module router_reg.
+Marked 1 switch rules as full_case in process $proc$rtl/router_reg.v:29$106 in module router_reg.
+Removed 1 dead cases from process $proc$rtl/router_fsm.v:131$105 in module router_fsm.
+Marked 1 switch rules as full_case in process $proc$rtl/router_fsm.v:131$105 in module router_fsm.
+Removed 1 dead cases from process $proc$rtl/router_fsm.v:50$62 in module router_fsm.
+Marked 11 switch rules as full_case in process $proc$rtl/router_fsm.v:50$62 in module router_fsm.
+Marked 1 switch rules as full_case in process $proc$rtl/router_fsm.v:41$57 in module router_fsm.
+Marked 3 switch rules as full_case in process $proc$rtl/router_fifo.v:113$49 in module router_fifo.
+Marked 4 switch rules as full_case in process $proc$rtl/router_fifo.v:65$24 in module router_fifo.
+Marked 3 switch rules as full_case in process $proc$rtl/router_fifo.v:42$7 in module router_fifo.
+Removed a total of 2 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 17 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~59 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\router_sync.$proc$rtl/router_sync.v:118$163'.
+     1/2: $0\soft_reset_2[0:0]
+     2/2: $0\count_2[4:0]
+Creating decoders for process `\router_sync.$proc$rtl/router_sync.v:90$157'.
+     1/2: $0\soft_reset_1[0:0]
+     2/2: $0\count_1[4:0]
+Creating decoders for process `\router_sync.$proc$rtl/router_sync.v:62$151'.
+     1/2: $0\soft_reset_0[0:0]
+     2/2: $0\count_0[4:0]
+Creating decoders for process `\router_sync.$proc$rtl/router_sync.v:46$150'.
+     1/2: $2\write_enb[2:0]
+     2/2: $1\write_enb[2:0]
+Creating decoders for process `\router_sync.$proc$rtl/router_sync.v:30$146'.
+     1/1: $1\fifo_full[0:0]
+Creating decoders for process `\router_sync.$proc$rtl/router_sync.v:21$144'.
+     1/1: $0\addr[1:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:107$139'.
+     1/1: $0\low_pkt_valid[0:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:98$136'.
+     1/1: $0\err[0:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:85$126'.
+     1/1: $0\parity_done[0:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:76$124'.
+     1/1: $0\packet_parity_reg[7:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:60$116'.
+     1/1: $0\parity_reg[7:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:51$113'.
+     1/1: $0\full_state_reg[7:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:38$109'.
+     1/1: $0\dout[7:0]
+Creating decoders for process `\router_reg.$proc$rtl/router_reg.v:29$106'.
+     1/1: $0\header_reg[7:0]
+Creating decoders for process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+     1/1: { $1\detect_add[0:0] $1\rst_int_reg[0:0] $1\write_enb_reg[0:0] $1\full_state[0:0] $1\laf_state[0:0] $1\ld_state[0:0] $1\busy[0:0] $1\lfd_state[0:0] }
+Creating decoders for process `\router_fsm.$proc$rtl/router_fsm.v:50$62'.
+     1/11: $11\next_state[2:0]
+     2/11: $10\next_state[2:0]
+     3/11: $9\next_state[2:0]
+     4/11: $8\next_state[2:0]
+     5/11: $7\next_state[2:0]
+     6/11: $6\next_state[2:0]
+     7/11: $5\next_state[2:0]
+     8/11: $4\next_state[2:0]
+     9/11: $3\next_state[2:0]
+    10/11: $2\next_state[2:0]
+    11/11: $1\next_state[2:0]
+Creating decoders for process `\router_fsm.$proc$rtl/router_fsm.v:41$57'.
+     1/1: $0\pre_state[2:0]
+Creating decoders for process `\router_fifo.$proc$rtl/router_fifo.v:113$49'.
+     1/1: $0\count[4:0]
+Creating decoders for process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+     1/13: $4$mem2bits$\mem$rtl/router_fifo.v:91$4[8:0]$43
+     2/13: $3$mem2bits$\mem$rtl/router_fifo.v:91$4[8:0]$39
+     3/13: $3$mem2bits$\mem$rtl/router_fifo.v:89$3[8:0]$38
+     4/13: $3$mem2bits$\mem$rtl/router_fifo.v:85$2[8:0]$37
+     5/13: $2$mem2bits$\mem$rtl/router_fifo.v:91$4[8:0]$34
+     6/13: $2$mem2bits$\mem$rtl/router_fifo.v:89$3[8:0]$33
+     7/13: $2$mem2bits$\mem$rtl/router_fifo.v:85$2[8:0]$32
+     8/13: $1$mem2bits$\mem$rtl/router_fifo.v:91$4[8:0]$31
+     9/13: $1$mem2bits$\mem$rtl/router_fifo.v:89$3[8:0]$30
+    10/13: $1$mem2bits$\mem$rtl/router_fifo.v:85$2[8:0]$29
+    11/13: $0\pl_count[5:0]
+    12/13: $0\rd_ptr[3:0]
+    13/13: $0\data_out[7:0]
+Creating decoders for process `\router_fifo.$proc$rtl/router_fifo.v:42$7'.
+     1/10: $3$memwr$\mem$rtl/router_fifo.v:57$1_EN[8:0]$22
+     2/10: $3$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$21
+     3/10: $3$memwr$\mem$rtl/router_fifo.v:57$1_ADDR[3:0]$20
+     4/10: $2$memwr$\mem$rtl/router_fifo.v:57$1_EN[8:0]$17
+     5/10: $2$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$16
+     6/10: $2$memwr$\mem$rtl/router_fifo.v:57$1_ADDR[3:0]$15
+     7/10: $1$memwr$\mem$rtl/router_fifo.v:57$1_EN[8:0]$14
+     8/10: $1$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$13
+     9/10: $1$memwr$\mem$rtl/router_fifo.v:57$1_ADDR[3:0]$12
+    10/10: $0\wrt_ptr[3:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\router_sync.\write_enb' from process `\router_sync.$proc$rtl/router_sync.v:46$150'.
+No latch inferred for signal `\router_sync.\fifo_full' from process `\router_sync.$proc$rtl/router_sync.v:30$146'.
+No latch inferred for signal `\router_fsm.\lfd_state' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\busy' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\detect_add' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\ld_state' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\laf_state' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\full_state' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\write_enb_reg' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\rst_int_reg' from process `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+No latch inferred for signal `\router_fsm.\next_state' from process `\router_fsm.$proc$rtl/router_fsm.v:50$62'.
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\router_sync.\soft_reset_2' using process `\router_sync.$proc$rtl/router_sync.v:118$163'.
+  created $dff cell `$procdff$593' with positive edge clock.
+Creating register for signal `\router_sync.\count_2' using process `\router_sync.$proc$rtl/router_sync.v:118$163'.
+  created $dff cell `$procdff$594' with positive edge clock.
+Creating register for signal `\router_sync.\soft_reset_1' using process `\router_sync.$proc$rtl/router_sync.v:90$157'.
+  created $dff cell `$procdff$595' with positive edge clock.
+Creating register for signal `\router_sync.\count_1' using process `\router_sync.$proc$rtl/router_sync.v:90$157'.
+  created $dff cell `$procdff$596' with positive edge clock.
+Creating register for signal `\router_sync.\soft_reset_0' using process `\router_sync.$proc$rtl/router_sync.v:62$151'.
+  created $dff cell `$procdff$597' with positive edge clock.
+Creating register for signal `\router_sync.\count_0' using process `\router_sync.$proc$rtl/router_sync.v:62$151'.
+  created $dff cell `$procdff$598' with positive edge clock.
+Creating register for signal `\router_sync.\addr' using process `\router_sync.$proc$rtl/router_sync.v:21$144'.
+  created $dff cell `$procdff$599' with positive edge clock.
+Creating register for signal `\router_reg.\low_pkt_valid' using process `\router_reg.$proc$rtl/router_reg.v:107$139'.
+  created $dff cell `$procdff$600' with positive edge clock.
+Creating register for signal `\router_reg.\err' using process `\router_reg.$proc$rtl/router_reg.v:98$136'.
+  created $dff cell `$procdff$601' with positive edge clock.
+Creating register for signal `\router_reg.\parity_done' using process `\router_reg.$proc$rtl/router_reg.v:85$126'.
+  created $dff cell `$procdff$602' with positive edge clock.
+Creating register for signal `\router_reg.\packet_parity_reg' using process `\router_reg.$proc$rtl/router_reg.v:76$124'.
+  created $dff cell `$procdff$603' with positive edge clock.
+Creating register for signal `\router_reg.\parity_reg' using process `\router_reg.$proc$rtl/router_reg.v:60$116'.
+  created $dff cell `$procdff$604' with positive edge clock.
+Creating register for signal `\router_reg.\full_state_reg' using process `\router_reg.$proc$rtl/router_reg.v:51$113'.
+  created $dff cell `$procdff$605' with positive edge clock.
+Creating register for signal `\router_reg.\dout' using process `\router_reg.$proc$rtl/router_reg.v:38$109'.
+  created $dff cell `$procdff$606' with positive edge clock.
+Creating register for signal `\router_reg.\header_reg' using process `\router_reg.$proc$rtl/router_reg.v:29$106'.
+  created $dff cell `$procdff$607' with positive edge clock.
+Creating register for signal `\router_fsm.\pre_state' using process `\router_fsm.$proc$rtl/router_fsm.v:41$57'.
+  created $dff cell `$procdff$608' with positive edge clock.
+Creating register for signal `\router_fifo.\count' using process `\router_fifo.$proc$rtl/router_fifo.v:113$49'.
+  created $dff cell `$procdff$609' with positive edge clock.
+Creating register for signal `\router_fifo.\data_out' using process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+  created $dff cell `$procdff$610' with positive edge clock.
+Creating register for signal `\router_fifo.\rd_ptr' using process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+  created $dff cell `$procdff$611' with positive edge clock.
+Creating register for signal `\router_fifo.\pl_count' using process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+  created $dff cell `$procdff$612' with positive edge clock.
+Creating register for signal `\router_fifo.$mem2bits$\mem$rtl/router_fifo.v:85$2' using process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+  created $dff cell `$procdff$613' with positive edge clock.
+Creating register for signal `\router_fifo.$mem2bits$\mem$rtl/router_fifo.v:89$3' using process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+  created $dff cell `$procdff$614' with positive edge clock.
+Creating register for signal `\router_fifo.$mem2bits$\mem$rtl/router_fifo.v:91$4' using process `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+  created $dff cell `$procdff$615' with positive edge clock.
+Creating register for signal `\router_fifo.\wrt_ptr' using process `\router_fifo.$proc$rtl/router_fifo.v:42$7'.
+  created $dff cell `$procdff$616' with positive edge clock.
+Creating register for signal `\router_fifo.$memwr$\mem$rtl/router_fifo.v:57$1_ADDR' using process `\router_fifo.$proc$rtl/router_fifo.v:42$7'.
+  created $dff cell `$procdff$617' with positive edge clock.
+Creating register for signal `\router_fifo.$memwr$\mem$rtl/router_fifo.v:57$1_DATA' using process `\router_fifo.$proc$rtl/router_fifo.v:42$7'.
+  created $dff cell `$procdff$618' with positive edge clock.
+Creating register for signal `\router_fifo.$memwr$\mem$rtl/router_fifo.v:57$1_EN' using process `\router_fifo.$proc$rtl/router_fifo.v:42$7'.
+  created $dff cell `$procdff$619' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\router_sync.$proc$rtl/router_sync.v:118$163'.
+Removing empty process `router_sync.$proc$rtl/router_sync.v:118$163'.
+Found and cleaned up 3 empty switches in `\router_sync.$proc$rtl/router_sync.v:90$157'.
+Removing empty process `router_sync.$proc$rtl/router_sync.v:90$157'.
+Found and cleaned up 3 empty switches in `\router_sync.$proc$rtl/router_sync.v:62$151'.
+Removing empty process `router_sync.$proc$rtl/router_sync.v:62$151'.
+Found and cleaned up 2 empty switches in `\router_sync.$proc$rtl/router_sync.v:46$150'.
+Removing empty process `router_sync.$proc$rtl/router_sync.v:46$150'.
+Found and cleaned up 1 empty switch in `\router_sync.$proc$rtl/router_sync.v:30$146'.
+Removing empty process `router_sync.$proc$rtl/router_sync.v:30$146'.
+Found and cleaned up 2 empty switches in `\router_sync.$proc$rtl/router_sync.v:21$144'.
+Removing empty process `router_sync.$proc$rtl/router_sync.v:21$144'.
+Found and cleaned up 2 empty switches in `\router_reg.$proc$rtl/router_reg.v:107$139'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:107$139'.
+Found and cleaned up 2 empty switches in `\router_reg.$proc$rtl/router_reg.v:98$136'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:98$136'.
+Found and cleaned up 3 empty switches in `\router_reg.$proc$rtl/router_reg.v:85$126'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:85$126'.
+Found and cleaned up 2 empty switches in `\router_reg.$proc$rtl/router_reg.v:76$124'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:76$124'.
+Found and cleaned up 4 empty switches in `\router_reg.$proc$rtl/router_reg.v:60$116'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:60$116'.
+Found and cleaned up 2 empty switches in `\router_reg.$proc$rtl/router_reg.v:51$113'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:51$113'.
+Found and cleaned up 4 empty switches in `\router_reg.$proc$rtl/router_reg.v:38$109'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:38$109'.
+Found and cleaned up 2 empty switches in `\router_reg.$proc$rtl/router_reg.v:29$106'.
+Removing empty process `router_reg.$proc$rtl/router_reg.v:29$106'.
+Found and cleaned up 1 empty switch in `\router_fsm.$proc$rtl/router_fsm.v:131$105'.
+Removing empty process `router_fsm.$proc$rtl/router_fsm.v:131$105'.
+Found and cleaned up 11 empty switches in `\router_fsm.$proc$rtl/router_fsm.v:50$62'.
+Removing empty process `router_fsm.$proc$rtl/router_fsm.v:50$62'.
+Found and cleaned up 1 empty switch in `\router_fsm.$proc$rtl/router_fsm.v:41$57'.
+Removing empty process `router_fsm.$proc$rtl/router_fsm.v:41$57'.
+Found and cleaned up 3 empty switches in `\router_fifo.$proc$rtl/router_fifo.v:113$49'.
+Removing empty process `router_fifo.$proc$rtl/router_fifo.v:113$49'.
+Found and cleaned up 6 empty switches in `\router_fifo.$proc$rtl/router_fifo.v:65$24'.
+Removing empty process `router_fifo.$proc$rtl/router_fifo.v:65$24'.
+Found and cleaned up 3 empty switches in `\router_fifo.$proc$rtl/router_fifo.v:42$7'.
+Removing empty process `router_fifo.$proc$rtl/router_fifo.v:42$7'.
+Cleaned up 60 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+<suppressed ~9 debug messages>
+Optimizing module router_reg.
+<suppressed ~5 debug messages>
+Optimizing module router_fsm.
+<suppressed ~7 debug messages>
+Optimizing module router_fifo.
+<suppressed ~27 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 56 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Computing hashes of 50 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\router_reg'.
+Computing hashes of 59 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Computing hashes of 49 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Computing hashes of 46 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 94 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Computing hashes of 76 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Computing hashes of 73 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+<suppressed ~63 debug messages>
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 96 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 88 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 86 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+<suppressed ~30 debug messages>
+Removed a total of 50 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$233.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$368.
+    dead port 1/2 on $mux $procmux$366.
+    dead port 2/2 on $mux $procmux$355.
+    dead port 2/2 on $mux $procmux$346.
+    dead port 2/2 on $mux $procmux$338.
+    dead port 1/2 on $mux $procmux$336.
+    dead port 2/2 on $mux $procmux$327.
+    dead port 1/2 on $mux $procmux$325.
+    dead port 1/2 on $mux $procmux$322.
+    dead port 2/2 on $mux $procmux$313.
+    dead port 2/2 on $mux $procmux$307.
+    dead port 2/2 on $mux $procmux$405.
+    dead port 2/2 on $mux $procmux$393.
+    dead port 2/2 on $mux $procmux$378.
+    dead port 1/2 on $mux $procmux$391.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$573.
+    dead port 2/2 on $mux $procmux$567.
+    dead port 2/2 on $mux $procmux$561.
+    dead port 2/2 on $mux $procmux$555.
+    dead port 1/2 on $mux $procmux$552.
+    dead port 2/2 on $mux $procmux$546.
+    dead port 1/2 on $mux $procmux$543.
+    dead port 2/2 on $mux $procmux$537.
+    dead port 1/2 on $mux $procmux$534.
+    dead port 1/2 on $mux $procmux$494.
+    dead port 2/2 on $mux $procmux$494.
+    dead port 1/2 on $mux $procmux$491.
+    dead port 2/2 on $mux $procmux$491.
+    dead port 1/2 on $mux $procmux$488.
+    dead port 2/2 on $mux $procmux$488.
+    dead port 1/2 on $mux $procmux$485.
+    dead port 2/2 on $mux $procmux$485.
+    dead port 1/2 on $mux $procmux$482.
+    dead port 2/2 on $mux $procmux$482.
+    dead port 1/2 on $mux $procmux$479.
+    dead port 2/2 on $mux $procmux$479.
+    dead port 1/2 on $mux $procmux$476.
+    dead port 2/2 on $mux $procmux$476.
+    dead port 1/2 on $mux $procmux$473.
+    dead port 2/2 on $mux $procmux$473.
+    dead port 1/2 on $mux $procmux$470.
+    dead port 2/2 on $mux $procmux$470.
+    dead port 1/2 on $mux $procmux$467.
+    dead port 2/2 on $mux $procmux$467.
+    dead port 1/2 on $mux $procmux$464.
+    dead port 2/2 on $mux $procmux$464.
+    dead port 1/2 on $mux $procmux$461.
+    dead port 2/2 on $mux $procmux$461.
+    dead port 1/2 on $mux $procmux$458.
+    dead port 2/2 on $mux $procmux$458.
+    dead port 1/2 on $mux $procmux$455.
+    dead port 2/2 on $mux $procmux$455.
+    dead port 1/2 on $mux $procmux$452.
+    dead port 2/2 on $mux $procmux$452.
+    dead port 1/2 on $mux $procmux$449.
+    dead port 2/2 on $mux $procmux$449.
+    dead port 1/2 on $mux $procmux$446.
+    dead port 2/2 on $mux $procmux$446.
+    dead port 1/2 on $mux $procmux$443.
+    dead port 2/2 on $mux $procmux$443.
+    dead port 1/2 on $mux $procmux$440.
+    dead port 2/2 on $mux $procmux$440.
+    dead port 1/2 on $mux $procmux$437.
+    dead port 2/2 on $mux $procmux$437.
+    dead port 1/2 on $mux $procmux$434.
+    dead port 2/2 on $mux $procmux$434.
+    dead port 1/2 on $mux $procmux$432.
+    dead port 2/2 on $mux $procmux$432.
+Removed 69 multiplexer ports.
+<suppressed ~134 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+    Consolidated identical input bits for $mux cell $procmux$531:
+      Old ports: A=9'000000000, B=9'111111111, Y=$procmux$531_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$531_Y [0]
+      New connections: $procmux$531_Y [8:1] = { $procmux$531_Y [0] $procmux$531_Y [0] $procmux$531_Y [0] $procmux$531_Y [0] $procmux$531_Y [0] $procmux$531_Y [0] $procmux$531_Y [0] $procmux$531_Y [0] }
+  Optimizing cells in module \router_fifo.
+    Consolidated identical input bits for $mux cell $procmux$558:
+      Old ports: A=$3$memwr$\mem$rtl/router_fifo.v:57$1_EN[8:0]$22, B=9'000000000, Y=$procmux$558_Y
+      New ports: A=$procmux$531_Y [0], B=1'0, Y=$procmux$558_Y [0]
+      New connections: $procmux$558_Y [8:1] = { $procmux$558_Y [0] $procmux$558_Y [0] $procmux$558_Y [0] $procmux$558_Y [0] $procmux$558_Y [0] $procmux$558_Y [0] $procmux$558_Y [0] $procmux$558_Y [0] }
+  Optimizing cells in module \router_fifo.
+    Consolidated identical input bits for $mux cell $procmux$576:
+      Old ports: A=9'000000000, B=$2$memwr$\mem$rtl/router_fifo.v:57$1_EN[8:0]$17, Y=$procmux$576_Y
+      New ports: A=1'0, B=$procmux$558_Y [0], Y=$procmux$576_Y [0]
+      New connections: $procmux$576_Y [8:1] = { $procmux$576_Y [0] $procmux$576_Y [0] $procmux$576_Y [0] $procmux$576_Y [0] $procmux$576_Y [0] $procmux$576_Y [0] $procmux$576_Y [0] $procmux$576_Y [0] }
+  Optimizing cells in module \router_fifo.
+Performed a total of 3 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 49 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 46 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 58 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 55 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$594 ($dff) from module router_sync (D = $add$rtl/router_sync.v:134$168_Y [4:0], Q = \count_2, rval = 5'00000).
+Adding SRST signal on $procdff$595 ($dff) from module router_sync (D = $procmux$193_Y, Q = \soft_reset_1, rval = 1'0).
+Adding SRST signal on $procdff$596 ($dff) from module router_sync (D = $add$rtl/router_sync.v:106$162_Y [4:0], Q = \count_1, rval = 5'00000).
+Adding SRST signal on $procdff$597 ($dff) from module router_sync (D = $procmux$211_Y, Q = \soft_reset_0, rval = 1'0).
+Adding SRST signal on $procdff$598 ($dff) from module router_sync (D = $add$rtl/router_sync.v:78$156_Y [4:0], Q = \count_0, rval = 5'00000).
+Adding SRST signal on $procdff$599 ($dff) from module router_sync (D = $procmux$243_Y, Q = \addr, rval = 2'00).
+Adding EN signal on $auto$ff.cc:337:slice$636 ($sdff) from module router_sync (D = \data_in, Q = \addr).
+Adding SRST signal on $procdff$593 ($dff) from module router_sync (D = $procmux$175_Y, Q = \soft_reset_2, rval = 1'0).
+Adding SRST signal on $procdff$600 ($dff) from module router_reg (D = $procmux$248_Y, Q = \low_pkt_valid, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$641 ($sdff) from module router_reg (D = 1'1, Q = \low_pkt_valid).
+Adding SRST signal on $procdff$601 ($dff) from module router_reg (D = $procmux$253_Y, Q = \err, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$643 ($sdff) from module router_reg (D = $ne$rtl/router_reg.v:103$138_Y, Q = \err).
+Adding SRST signal on $procdff$602 ($dff) from module router_reg (D = $procmux$261_Y, Q = \parity_done, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$645 ($sdff) from module router_reg (D = $procmux$261_Y, Q = \parity_done).
+Adding SRST signal on $procdff$603 ($dff) from module router_reg (D = $procmux$266_Y, Q = \packet_parity_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$649 ($sdff) from module router_reg (D = \data_in, Q = \packet_parity_reg).
+Adding SRST signal on $procdff$604 ($dff) from module router_reg (D = $procmux$277_Y, Q = \parity_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$651 ($sdff) from module router_reg (D = $procmux$277_Y, Q = \parity_reg).
+Adding SRST signal on $procdff$605 ($dff) from module router_reg (D = $procmux$282_Y, Q = \full_state_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$655 ($sdff) from module router_reg (D = \data_in, Q = \full_state_reg).
+Adding SRST signal on $procdff$606 ($dff) from module router_reg (D = $procmux$293_Y, Q = \dout, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$657 ($sdff) from module router_reg (D = $procmux$293_Y, Q = \dout).
+Adding SRST signal on $procdff$607 ($dff) from module router_reg (D = $procmux$298_Y, Q = \header_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$661 ($sdff) from module router_reg (D = \data_in, Q = \header_reg).
+Adding SRST signal on $procdff$608 ($dff) from module router_fsm (D = \next_state, Q = \pre_state, rval = 3'000).
+Adding SRST signal on $procdff$611 ($dff) from module router_fifo (D = $procmux$511_Y, Q = \rd_ptr, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$664 ($sdff) from module router_fifo (D = $add$rtl/router_fifo.v:86$41_Y, Q = \rd_ptr).
+Adding SRST signal on $procdff$616 ($dff) from module router_fifo (D = $procmux$585_Y, Q = \wrt_ptr, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$670 ($sdff) from module router_fifo (D = $add$rtl/router_fifo.v:58$23_Y, Q = \wrt_ptr).
+Adding SRST signal on $procdff$612 ($dff) from module router_fifo (D = $procmux$502_Y, Q = \pl_count, rval = 6'000000).
+Adding EN signal on $auto$ff.cc:337:slice$676 ($sdff) from module router_fifo (D = $procmux$500_Y, Q = \pl_count).
+Adding SRST signal on $procdff$610 ($dff) from module router_fifo (D = $procmux$525_Y, Q = \data_out, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$686 ($sdff) from module router_fifo (D = $procmux$525_Y, Q = \data_out).
+Adding SRST signal on $procdff$609 ($dff) from module router_fifo (D = $procmux$421_Y, Q = \count, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$690 ($sdff) from module router_fifo (D = $procmux$421_Y, Q = \count).
+Setting constant 0-bit at position 0 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 1 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 2 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 3 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 4 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 5 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 6 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 7 on $procdff$615 ($dff) from module router_fifo.
+Setting constant 0-bit at position 8 on $procdff$615 ($dff) from module router_fifo.
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+Removed 47 unused cells and 349 unused wires.
+<suppressed ~51 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+<suppressed ~3 debug messages>
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+<suppressed ~3 debug messages>
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 57 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 50 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 47 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 44 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+4.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+4.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+4.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 57 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 44 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+4.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+4.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+4.23. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing FSM pass (extract and optimize FSM).
+
+5.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+5.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+5.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 57 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 44 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 57 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 44 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+6.9. Finished fast OPT passes. (There is nothing left to do.)
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing router_fifo.mem write port 0.
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$auto$proc_rom.cc:155:do_switch$170'[0] in module `\router_fsm': no output FF found.
+Checking read port address `$auto$proc_rom.cc:155:do_switch$170'[0] in module `\router_fsm': merged address FF to cell.
+Checking read port `\mem'[0] in module `\router_fifo': no output FF found.
+Checking read port address `\mem'[0] in module `\router_fifo': merged address FF to cell.
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $auto$proc_rom.cc:155:do_switch$170 in module \router_fsm:
+  created 8 $dff cells and 0 static cells of width 8.
+Extracted data FF from read port 0 of router_fsm.$auto$proc_rom.cc:155:do_switch$170: $$auto$proc_rom.cc:155:do_switch$170$rdreg[0]
+  read interface: 1 $dff and 7 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory \mem in module \router_fifo:
+  created 16 $dff cells and 0 static cells of width 9.
+Extracted addr FF from read port 0 of router_fifo.mem: $\mem$rdreg[0]
+  read interface: 1 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+<suppressed ~8 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 64 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 136 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~164 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 64 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 136 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $\mem$rdreg[0] ($dff) from module router_fifo (D = $auto$rtlil.cc:3386:Mux$706, Q = $\mem$rdreg[0]$q, rval = 4'0000).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+Removed 1 unused cells and 45 unused wires.
+<suppressed ~3 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~163 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 64 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 135 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\mem[0]$730 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[0]).
+Adding EN signal on $memory\mem[1]$732 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[1]).
+Adding EN signal on $memory\mem[2]$734 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[2]).
+Adding EN signal on $memory\mem[3]$736 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[3]).
+Adding EN signal on $memory\mem[4]$738 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[4]).
+Adding EN signal on $memory\mem[5]$740 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[5]).
+Adding EN signal on $memory\mem[6]$742 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[6]).
+Adding EN signal on $memory\mem[7]$744 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[7]).
+Adding EN signal on $memory\mem[8]$746 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[8]).
+Adding EN signal on $memory\mem[9]$748 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[9]).
+Adding EN signal on $memory\mem[10]$750 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[10]).
+Adding EN signal on $memory\mem[11]$752 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[11]).
+Adding EN signal on $memory\mem[12]$754 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[12]).
+Adding EN signal on $memory\mem[13]$756 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[13]).
+Adding EN signal on $memory\mem[14]$758 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[14]).
+Adding EN signal on $memory\mem[15]$760 ($dff) from module router_fifo (D = $0$memwr$\mem$rtl/router_fifo.v:57$1_DATA[8:0]$9, Q = \mem[15]).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+Removed 16 unused cells and 16 unused wires.
+<suppressed ~17 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~83 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 38 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 36 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 64 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 119 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=4:B_WIDTH=1:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=4:B_WIDTH=1:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=4:B_WIDTH=1:A_WIDTH=4:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=6:B_WIDTH=1:A_WIDTH=6:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=6:B_WIDTH=1:A_WIDTH=6:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=6:B_WIDTH=1:A_WIDTH=6:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=6:B_WIDTH=1:A_WIDTH=6:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=6:B_WIDTH=1:A_WIDTH=6:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=6:B_WIDTH=1:A_WIDTH=6:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $logic_and.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=5:B_WIDTH=1:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=5:B_WIDTH=1:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=5:B_WIDTH=1:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=5:B_WIDTH=1:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=5:B_WIDTH=1:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=5:B_WIDTH=1:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $pmux.
+Using template $paramod$dc04b7d98e503a7bab16fce2df70e6e2c5ca34d6\_90_alu for cells of type $alu.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using template $paramod$a04dd9d4d8b430140c4ff94b50470fb380fda2a0\_90_alu for cells of type $alu.
+Using template $paramod$32efbfac1c4dc57230cf86180788fdfd12e3b511\_90_alu for cells of type $alu.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $ne.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$b0777dc865134c8525a4aa84de8cfa938974cad1\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1568 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+<suppressed ~1207 debug messages>
+Optimizing module router_reg.
+Optimizing module router_fsm.
+<suppressed ~94 debug messages>
+Optimizing module router_fifo.
+<suppressed ~268 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 123 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Computing hashes of 113 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Computing hashes of 112 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+<suppressed ~33 debug messages>
+Finding identical cells in module `\router_reg'.
+Computing hashes of 150 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 162 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Computing hashes of 142 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Computing hashes of 135 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+<suppressed ~81 debug messages>
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 590 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 574 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 572 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Computing hashes of 571 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+<suppressed ~57 debug messages>
+Removed a total of 57 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 112 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 150 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 135 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 571 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:337:slice$2349 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][0][0]$a$710 [7], Q = \detect_add, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$2348 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][1][1]$b$717 [6], Q = \rst_int_reg, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$2344 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][1][0]$b$714 [2], Q = \ld_state, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$2346 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][0][0]$b$711 [4], Q = \full_state, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$2345 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][0][0]$b$711 [3], Q = \laf_state, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$2343 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][0][0]$a$710 [1], Q = \busy, rval = 1'1).
+Adding SRST signal on $auto$ff.cc:337:slice$2342 ($_DFF_P_) from module router_fsm (D = $memory$auto$proc_rom.cc:155:do_switch$170$rdmux[0][0][0]$a$710 [0], Q = \lfd_state, rval = 1'0).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+Removed 37 unused cells and 893 unused wires.
+<suppressed ~41 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \router_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_reg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_fsm..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \router_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \router_top.
+  Optimizing cells in module \router_sync.
+  Optimizing cells in module \router_reg.
+  Optimizing cells in module \router_fsm.
+  Optimizing cells in module \router_fifo.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\router_top'.
+Computing hashes of 6 cells of `\router_top'.
+Finding duplicate cells in `\router_top'.
+Finding identical cells in module `\router_sync'.
+Computing hashes of 109 cells of `\router_sync'.
+Finding duplicate cells in `\router_sync'.
+Finding identical cells in module `\router_reg'.
+Computing hashes of 150 cells of `\router_reg'.
+Finding duplicate cells in `\router_reg'.
+Finding identical cells in module `\router_fsm'.
+Computing hashes of 129 cells of `\router_fsm'.
+Finding duplicate cells in `\router_fsm'.
+Finding identical cells in module `\router_fifo'.
+Computing hashes of 546 cells of `\router_fifo'.
+Finding duplicate cells in `\router_fifo'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \router_top..
+Finding unused cells or wires in module \router_sync..
+Finding unused cells or wires in module \router_reg..
+Finding unused cells or wires in module \router_fsm..
+Finding unused cells or wires in module \router_fifo..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module router_top.
+Optimizing module router_sync.
+Optimizing module router_reg.
+Optimizing module router_fsm.
+Optimizing module router_fifo.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Printing statistics.
+
+=== router_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+       73 wire bits
+       36 public wires
+       73 public wire bits
+       15 ports
+       43 port bits
+        6 submodules
+        3   router_fifo
+        1   router_fsm
+        1   router_reg
+        1   router_sync
+
+=== router_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       88 wires
+      388 wire bits
+       26 public wires
+       42 public wire bits
+       22 ports
+       25 port bits
+      109 cells
+       15   $_AND_
+        7   $_MUX_
+       24   $_NOT_
+       31   $_OR_
+        2   $_SDFFE_PN0P_
+       18   $_SDFF_PP0_
+       12   $_XOR_
+
+=== router_reg ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       52 wires
+      168 wire bits
+       19 public wires
+       61 public wire bits
+       15 ports
+       29 port bits
+      150 cells
+        7   $_AND_
+       50   $_MUX_
+        4   $_NOT_
+       14   $_OR_
+       33   $_SDFFE_PN0P_
+       10   $_SDFFE_PP0P_
+       32   $_XOR_
+
+=== router_fsm ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      113 wires
+      173 wire bits
+       23 public wires
+       28 public wire bits
+       21 ports
+       22 port bits
+      129 cells
+       28   $_AND_
+        1   $_DFF_P_
+       15   $_MUX_
+       27   $_NOT_
+       48   $_OR_
+        3   $_SDFF_PN0_
+        6   $_SDFF_PP0_
+        1   $_SDFF_PP1_
+
+=== router_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      176 wires
+      625 wire bits
+       30 public wires
+      187 public wire bits
+       10 ports
+       24 port bits
+      546 cells
+       77   $_AND_
+      144   $_DFFE_PP_
+      213   $_MUX_
+       26   $_NOT_
+       31   $_OR_
+        8   $_SDFFE_PN0P_
+       19   $_SDFFE_PP0P_
+        4   $_SDFF_PP0_
+       24   $_XOR_
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     2026 router_top
+      546 router_fifo
+      129 router_fsm
+      150 router_reg
+      109 router_sync
+
+        +----------Count including submodules.
+        | 
+      817 wires
+     2677 wire bits
+      194 public wires
+      765 public wire bits
+      103 ports
+      191 port bits
+        - memories
+        - memory bits
+        - processes
+     2026 cells
+      281   $_AND_
+      432   $_DFFE_PP_
+        1   $_DFF_P_
+      711   $_MUX_
+      133   $_NOT_
+      186   $_OR_
+       59   $_SDFFE_PN0P_
+       67   $_SDFFE_PP0P_
+        3   $_SDFF_PN0_
+       36   $_SDFF_PP0_
+        1   $_SDFF_PP1_
+      116   $_XOR_
+        6 submodules
+        3   router_fifo
+        1   router_fsm
+        1   router_reg
+        1   router_sync
+
+12. Executing Verilog backend.
+
+12.1. Executing BMUXMAP pass.
+
+12.2. Executing DEMUXMAP pass.
+Dumping module `\router_fifo'.
+Dumping module `\router_fsm'.
+Dumping module `\router_reg'.
+Dumping module `\router_sync'.
+Dumping module `\router_top'.
+
+Warnings: 1 unique messages, 2 total
+End of script. Logfile hash: cdddfb0a39, time: 0.09s, user: 0.07s, system: 0.02s, MEM: 25.23 MB peak
+Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, AppleClang clang++ 21.0.0.21000101)
+Time spent: 22% 1x techmap (0 sec), 18% 22x opt_expr (0 sec), ...

@@ -1,6 +1,10 @@
 CADENCE XCELIUM UVM + SVA REGRESSION
 Date: 2026-09-21
 
+Provenance: existing project summary transcribed from supplied run evidence.
+The full raw Xcelium log, original screenshots and random seed are not
+committed. This summary is retained; Xcelium was not rerun during final cleanup.
+
 Tool:
 Cadence Xcelium 26.03-s001
 
@@ -42,11 +46,11 @@ UVM_FATAL   = 0
 
 SVA evidence:
 Xcelium compiled/elaborated router_fifo_sva and router_fsm_sva from
-router_assertions.sv. A log search for assertion failure messages returned no
+sva/router_assertions.sv. The recorded log search for assertion failure messages returned no
 matches in the completed 5,024-packet regression.
 
 Important scope note:
 The 100% value refers to the defined functional coverage model in
-functional_coverage.sv; it is not a claim of exhaustive design or code coverage.
+tb/functional_coverage.sv; it is not a claim of exhaustive design or code coverage.
 No assertion failures were observed in this regression; this summary does not
 claim formal proof or exhaustive assertion coverage.
