@@ -1,14 +1,25 @@
 SVA AND TIMING STATUS
 
 SVA
-The supplied router_assertions.sv contains five FIFO properties, three FSM
-properties, and bind statements for router_fifo and router_fsm. The file is
-preserved byte-for-byte in sva/.
+The repository contains five FIFO properties, three FSM properties, and bind
+statements for router_fifo and router_fsm in sva/router_assertions.sv.
 
-The supplied testbench and original launch command do not include this file.
-No successful bound-assertion run appears in the supplied evidence. The new
-launcher offers --sva for an explicit future run; successful assertion execution
-is not claimed. Compiling properties alone would not establish that they pass.
+A Cadence Xcelium 26.03-s001 regression was run on 2026-09-21 with the bound
+assertion file included. Xcelium compiled and elaborated router_fifo_sva and
+router_fsm_sva. The same run completed 5,024 packets with:
+
+expected   = 5024
+actual     = 5024
+matched    = 5024
+mismatched = 0
+
+All expected and actual scoreboard queues were empty at end of test. The UVM
+summary reported 0 warnings, 0 errors and 0 fatals. A log search for assertion
+failure messages returned no matches in the completed regression.
+
+Therefore, no assertion failures were observed in this Xcelium regression.
+This is simulation evidence, not formal proof or exhaustive assertion coverage.
+See xcelium_sva_regression.txt for the regression summary.
 
 TIMING
 Source: evidence/timing.log
@@ -21,6 +32,6 @@ It specifies a 10 ns clock, 0.2 ns clock uncertainty and 1 ns I/O delays.
 These are input constraints, not measured timing performance.
 
 The experimental STA script retains the original timing commands with portable
-paths and an external SKY130_LIB setting. It has not been validated with an STA
-tool. Additional technology setup is required for use within OpenROAD.
-No achieved frequency, slack, critical path or timing closure is reported.
+paths and an external SKY130_LIB setting. Additional technology setup is still
+required for a validated STA flow. No achieved frequency, slack, critical path
+or timing closure is reported here.
