@@ -1,0 +1,1 @@
+Binary image is stored as docs/uvm_architecture.png. This placeholder should not be used.
