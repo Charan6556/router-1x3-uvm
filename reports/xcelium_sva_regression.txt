@@ -1,0 +1,52 @@
+CADENCE XCELIUM UVM + SVA REGRESSION
+Date: 2026-09-21
+
+Tool:
+Cadence Xcelium 26.03-s001
+
+Regression configuration:
+- 24 directed packets
+- 5,000 constrained-random packets
+- Total sampled packets: 5,024
+- Bound FIFO and FSM SVA modules compiled and elaborated
+
+Scoreboard result:
+expected   = 5024
+actual     = 5024
+matched    = 5024
+mismatched = 0
+
+Remaining scoreboard queues:
+exp0 = 0
+exp1 = 0
+exp2 = 0
+act0 = 0
+act1 = 0
+act2 = 0
+
+Functional coverage:
+DESTINATION      = 100.00%
+PAYLOAD_SIZE     = 100.00%
+ERROR_PACKET     = 100.00%
+LENGTH_BOUNDARY  = 100.00%
+DEST_SIZE        = 100.00%
+DEST_ERROR       = 100.00%
+SIZE_ERROR       = 100.00%
+DEST_SIZE_ERROR  = 100.00%
+TOTAL FUNCTIONAL COVERAGE = 100.00%
+
+UVM report summary:
+UVM_WARNING = 0
+UVM_ERROR   = 0
+UVM_FATAL   = 0
+
+SVA evidence:
+Xcelium compiled/elaborated router_fifo_sva and router_fsm_sva from
+router_assertions.sv. A log search for assertion failure messages returned no
+matches in the completed 5,024-packet regression.
+
+Important scope note:
+The 100% value refers to the defined functional coverage model in
+functional_coverage.sv; it is not a claim of exhaustive design or code coverage.
+No assertion failures were observed in this regression; this summary does not
+claim formal proof or exhaustive assertion coverage.
