@@ -1,12 +1,22 @@
 CADENCE XCELIUM UVM + SVA REGRESSION
 Date: 2026-09-21
 
-Provenance: existing project summary transcribed from supplied run evidence.
-The full raw Xcelium log, original screenshots and random seed are not
-committed. This summary is retained; Xcelium was not rerun during final cleanup.
+Primary evidence: three original user-supplied screenshots, preserved unchanged.
+- evidence/xcelium_regression.png
+  Original capture: 2026-09-21 at 7:11:34 PM
+- evidence/xcelium_sva_elaboration.png
+  Original capture: 2026-09-21 at 7:14:46 PM
+- evidence/xcelium_sva_failure_search.png
+  Original capture: 2026-09-21 at 7:17:33 PM
+
+The screenshots corroborate the previously recorded regression summary.
+The full raw log, original launch command and random seed are not included.
+No Xcelium simulation was rerun during cleanup or this evidence update.
 
 Tool:
-Cadence Xcelium 26.03-s001
+Cadence Xcelium; the regression screenshot shows an XCELIUM2603 installation
+path. The exact version banner and patch level are not visible.
+Test: router_test
 
 Regression configuration:
 - 24 directed packets
@@ -40,14 +50,21 @@ DEST_SIZE_ERROR  = 100.00%
 TOTAL FUNCTIONAL COVERAGE = 100.00%
 
 UVM report summary:
+UVM_INFO    = 16
 UVM_WARNING = 0
 UVM_ERROR   = 0
 UVM_FATAL   = 0
 
 SVA evidence:
-Xcelium compiled/elaborated router_fifo_sva and router_fsm_sva from
-sva/router_assertions.sv. The recorded log search for assertion failure messages returned no
-matches in the completed 5,024-packet regression.
+The compilation/elaboration excerpt shows router_assertions.sv and the
+worklib.router_fifo_sva and worklib.router_fsm_sva modules.
+The failure-search screenshot shows this command against xcelium_regression.log:
+  grep -Ei "assert.*fail|assertion.*fail|failure" xcelium_regression.log
+The command is shown twice, returning to the shell prompt without matches.
+The displayed UVM_ERROR and UVM_FATAL summary counts are both 0.
+
+The cropped Assertions row has no column headings. Its numbers are not used
+as pass/fail counts or assertion-coverage measurements.
 
 Important scope note:
 The 100% value refers to the defined functional coverage model in

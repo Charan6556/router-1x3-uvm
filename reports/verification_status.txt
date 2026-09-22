@@ -4,9 +4,10 @@ SVA
 The repository contains five FIFO properties, three FSM properties, and bind
 statements for router_fifo and router_fsm in sva/router_assertions.sv.
 
-The recorded summary reports a Cadence Xcelium 26.03-s001 regression on
-2026-09-21 with the bound assertion file included. Xcelium compiled and elaborated router_fifo_sva and
-router_fsm_sva. The same run completed 5,024 packets with:
+The supplied 2026-09-21 Cadence Xcelium screenshots support the recorded
+regression summary. The compilation/elaboration excerpt shows
+router_assertions.sv, router_fifo_sva and router_fsm_sva. The regression
+screenshot shows 5,024 packets with:
 
 expected   = 5024
 actual     = 5024
@@ -14,13 +15,21 @@ matched    = 5024
 mismatched = 0
 
 All expected and actual scoreboard queues were empty at end of test. The UVM
-summary reported 0 warnings, 0 errors and 0 fatals. A log search for assertion
-failure messages returned no matches in the completed regression.
+summary reported 0 warnings, 0 errors and 0 fatals. A separate screenshot
+shows searches of xcelium_regression.log for assertion-failure text returning
+to the shell prompt without matches.
+
+Primary evidence:
+- evidence/xcelium_regression.png
+- evidence/xcelium_sva_elaboration.png
+- evidence/xcelium_sva_failure_search.png
 
 Therefore, no assertion failures were observed in this Xcelium regression.
 This is simulation evidence, not formal proof or exhaustive assertion coverage.
 See xcelium_sva_regression.txt for the regression summary and provenance limits.
-The full raw log is not committed; final cleanup did not rerun Xcelium.
+The full raw log, original launch command and seed are not committed.
+The cropped assertion-count row is not interpreted as a coverage result.
+Neither final cleanup nor this evidence update reran Xcelium.
 
 EXPERIMENTAL OPENROAD — INCOMPLETE
 Source: evidence/timing.log

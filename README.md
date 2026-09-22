@@ -70,6 +70,8 @@ For a guided code review, start with the [testbench reading guide](docs/testbenc
 | Generic synthesis | Yosys completed; 2,026 cells including submodules | [Synthesis summary](reports/synthesis_summary.txt) |
 | SKY130 HD mapping | Reported cell area **23,804.08 µm²**, TT / 25°C / 1.8 V | [Synthesis summary](reports/synthesis_summary.txt) |
 
+The original Xcelium screenshots are preserved: [regression and coverage](reports/evidence/xcelium_regression.png), [SVA compilation/elaboration](reports/evidence/xcelium_sva_elaboration.png), and [assertion-failure log search](reports/evidence/xcelium_sva_failure_search.png).
+
 ### Functional coverage
 
 | Coverage item | Result |
@@ -97,13 +99,13 @@ Run the commands below from the repository root. Build outputs are written under
 
 ### Cadence Xcelium UVM, coverage and SVA
 
-Requires a licensed Cadence Xcelium installation with UVM support and `xrun` on `PATH`. The recorded regression used Xcelium 26.03-s001. The launcher includes the bound assertions and coverage by default, resolves RTL/testbench include directories, and writes simulation logs, coverage data and waveforms under `build/xcelium/`.
+Requires a licensed Cadence Xcelium installation with UVM support and `xrun` on `PATH`. The launcher includes the bound assertions and coverage by default, resolves RTL/testbench include directories, and writes simulation logs, coverage data and waveforms under `build/xcelium/`.
 
 ```bash
 ./run.sh -svseed 1
 ```
 
-Additional arguments are passed to `xrun`. The seed above is an example; the original Xcelium seed and full raw log are not archived. The launcher's shell behavior was checked during final cleanup, but Xcelium was unavailable locally, so the recorded regression was not rerun. Review [the regression summary](reports/xcelium_sva_regression.txt) and the resulting `build/xcelium/simulation.log` when running locally.
+Additional arguments are passed to `xrun`. The seed above is an example; the screenshots are archived, but the original Xcelium command, seed and full raw log are not available. The launcher's shell behavior was checked during final cleanup, but Xcelium was unavailable locally, so the recorded regression was not rerun. Review [the regression summary](reports/xcelium_sva_regression.txt) and the resulting `build/xcelium/simulation.log` when running locally.
 
 The [mutation report](reports/mutation_test.txt) preserves the supplied checker-failure evidence. Its historical simulator provenance is documented there; the exact mutation patch and seed are unavailable, so the repository does not provide a reproducible mutation command or claim a new Xcelium mutation run.
 

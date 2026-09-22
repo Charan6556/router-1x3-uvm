@@ -1,6 +1,7 @@
 FUNCTIONAL COVERAGE — RECORDED XCELIUM REGRESSION
 
-Primary summary: xcelium_sva_regression.txt (Cadence Xcelium, 2026-09-21)
+Primary evidence: evidence/xcelium_regression.png (Cadence Xcelium, 2026-09-21)
+Summary: xcelium_sva_regression.txt
 Historical corroboration: evidence/regression.png (earlier VCS run)
 Model: tb/functional_coverage.sv
 Samples: 5024 complete input packets observed by the write monitor

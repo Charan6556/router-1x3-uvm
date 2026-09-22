@@ -8,6 +8,8 @@ Final cleanup leaves all five RTL files, all 27 UVM/testbench files, the SVA fil
 
 The two latest supplied architecture PNGs replace/add `docs/uvm_architecture.png` and `docs/router_architecture.png` without image editing. Both are linked from the README and the [architecture guide](README.md).
 
+Three original Xcelium screenshots are also preserved unchanged under `reports/evidence/`. They corroborate the recorded scoreboard, defined functional coverage and SVA observations; see the [screenshot provenance](../reports/README.md#xcelium-screenshot-provenance). The full raw log, launch command and seed remain unavailable.
+
 ## Tool flow
 
 - Cadence Xcelium is the active UVM, scoreboard, functional-coverage and SVA flow. `run.sh` includes coverage and bound assertions by default and writes generated products under `build/xcelium/`. Shell checks do not establish a new simulator result.

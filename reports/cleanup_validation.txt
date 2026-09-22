@@ -37,10 +37,23 @@ ignoring comments and whitespace.
 RECORDED RESULTS, NOT RERUN IN FINAL CLEANUP
 Xcelium: 5024 expected/actual/matched, 0 mismatches, all queues empty,
 100% defined functional coverage, 0 UVM warnings/errors/fatals and no observed
-assertion failures. The existing summary is retained; xrun is unavailable here.
+assertion failures. The summary is now corroborated by three supplied Xcelium
+screenshots; xrun is unavailable here. No local Xcelium rerun is claimed.
 Mutation: supplied historical screenshot shows 74 mismatches and 2516 UVM
 errors. Exact mutation source/seed/full log are unavailable.
 SKY130 mapping: original and earlier cleanup Yosys logs both report
 23804.080000 square micrometres. The Liberty dependency is unavailable locally.
 OpenROAD: experimental/incomplete; recorded ORD-2010 failure. No completed STA,
 timing closure or place-and-route result is claimed.
+
+XCELIUM EVIDENCE UPDATE
+Review date: 2026-09-22 (America/Denver)
+Base commit: 41967d2c427f789d56e09332e199e7e38290822a
+The three supplied screenshots are archived byte-for-byte as
+reports/evidence/xcelium_regression.png, xcelium_sva_elaboration.png and
+xcelium_sva_failure_search.png. Their SHA-256 hashes are included in
+reports/evidence_sha256.txt. README/report links and source preservation
+were rechecked. RTL/UVM/SVA, launch scripts, synthesis files, architecture
+figures and all prior evidence files are unchanged in this update.
+The screenshots contain no Xcelium mutation run; historical mutation evidence
+retains its original simulator attribution.
