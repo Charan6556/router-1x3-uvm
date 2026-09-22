@@ -1,8 +1,8 @@
 # 1×3 Packet Router: RTL Design and UVM Verification
 
-A SystemVerilog/UVM verification project for an 8-bit packet router with one input and three output FIFOs. The testbench combines directed boundary cases, constrained-random packets, parity-error injection, independent monitors, a packet scoreboard, and functional coverage.
+A SystemVerilog/UVM verification project for an 8-bit packet router with one input and three output FIFOs. The testbench combines directed boundary cases, constrained-random packets, parity-error injection, independent monitors, a packet scoreboard, functional coverage, and bound SystemVerilog assertions.
 
-The supplied regression evidence records **5,024 matched packets, zero mismatches, and 100% of the defined functional coverage model**. A separate mutation-test result records 74 mismatched packets, demonstrating that the checker detected the corrupted output in that run.
+The latest Cadence Xcelium regression records **5,024 expected packets, 5,024 actual packets, 5,024 matches, zero mismatches, empty scoreboard queues, 100% of the defined functional coverage model, and zero UVM warnings/errors/fatals**. The bound FIFO/FSM assertion modules were compiled and elaborated in the same run, and no assertion-failure messages were observed. A separate mutation test records 74 mismatched packets, demonstrating that the checker detected intentionally corrupted output data.
 
 ## Project layout
 
@@ -12,7 +12,7 @@ router-1x3-uvm/
 ├── tb/                  UVM transactions, sequences, agents, scoreboard and coverage
 ├── sva/                 FIFO and FSM assertions with bind statements
 ├── synthesis/           Yosys scripts and preserved synthesis netlists
-│   └── experimental/    Unverified timing setup and SDC constraints
+│   └── experimental/    Experimental timing setup and SDC constraints
 ├── scripts/             Lint and synthesis launchers
 ├── reports/             Results, provenance and supporting evidence
 ├── docs/                Testbench reading guide and figure placeholders
@@ -29,7 +29,7 @@ router-1x3-uvm/
 | Payload | The number of 8-bit bytes encoded in the header |
 | Parity | XOR of the header and payload bytes; selected tests flip one parity bit |
 
-The write driver asserts `pkt_valid` for the header and payload and deasserts it for the parity byte. It waits while `busy` is asserted before driving the next byte. Each read driver delays by 1–5 cycles after output becomes valid, then enables reads until its FIFO empties.
+The write driver asserts `pkt_valid` for the header and payload and deasserts it for the parity byte. It waits while `busy` is asserted before advancing to the next byte. Each read driver delays by 1–5 cycles after output becomes valid, then enables reads until its FIFO empties.
 
 ## Router architecture
 
@@ -54,22 +54,21 @@ Expected and actual queues are kept separately for each destination. Either moni
 **Figure placeholder:** add `docs/uvm_architecture.png` after drawing the testbench hierarchy.
 <!-- Enable after the file is added: ![UVM architecture](docs/uvm_architecture.png) -->
 
-For a guided code review, start with the [testbench reading guide](docs/testbench_guide.md). Comments in the source explain the packet timing, queue matching, parity injection and sequence coordination in the project's existing short-comment style.
+For a guided code review, start with the [testbench reading guide](docs/testbench_guide.md).
 
 ## Verified results
 
 | Check | Recorded result | Evidence |
 |---|---|---|
-| UVM regression | 5,024 expected, 5,024 actual, 5,024 matched, 0 mismatched | [Regression summary](reports/regression_summary.txt) |
-| End-of-test state | All six scoreboard queues empty | [Regression screenshot](reports/evidence/regression.png) |
-| UVM severities | 0 warnings, 0 errors, 0 fatals | [Regression screenshot](reports/evidence/regression.png) |
-| Defined functional coverage | 100%; 5,024 sampled input packets | [Coverage summary](reports/functional_coverage.txt) |
+| Cadence Xcelium UVM + SVA regression | 5,024 expected, 5,024 actual, 5,024 matched, 0 mismatched | [Xcelium regression summary](reports/xcelium_sva_regression.txt) |
+| End-of-test state | All six scoreboard queues empty | [Xcelium regression summary](reports/xcelium_sva_regression.txt) |
+| UVM severities | 0 warnings, 0 errors, 0 fatals | [Xcelium regression summary](reports/xcelium_sva_regression.txt) |
+| Bound assertions | `router_fifo_sva` and `router_fsm_sva` compiled/elaborated; no assertion failures observed in the 5,024-packet run | [SVA status](reports/verification_status.txt) |
+| Defined functional coverage | 100%; 5,024 sampled input packets | [Xcelium regression summary](reports/xcelium_sva_regression.txt) |
 | Mutation test | 74 expected, 74 actual, 0 matched, 74 mismatched; 2,516 UVM errors | [Mutation summary](reports/mutation_test.txt) |
 | RTL lint | 0 warnings, 0 errors | [Lint summary](reports/lint_summary.txt) |
 | Generic synthesis | Yosys completed; 2,026 cells including submodules | [Synthesis summary](reports/synthesis_summary.txt) |
 | SKY130 HD mapping | Reported cell area **23,804.08 µm²**, TT / 25°C / 1.8 V | [Synthesis summary](reports/synthesis_summary.txt) |
-
-The UVM and mutation results come from the supplied screenshots; they were not rerun during repository cleanup because VCS is unavailable in the cleanup environment. Lint and both synthesis flows were rerun successfully after reorganizing the files. The regenerated netlists match the supplied netlists when comments and whitespace are ignored. See [cleanup validation](reports/cleanup_validation.txt) and the [evidence index](reports/README.md).
 
 ### Functional coverage
 
@@ -84,31 +83,48 @@ The UVM and mutation results come from the supplied screenshots; they were not r
 | Size × error type | 100% |
 | Destination × size × error type | 100% |
 
-The default sequence sends 18 packets spanning destination × size group × error type, six boundary packets, then 5,000 random packets. Size ranges are grouped as 1–13, 14–30 and 31–63 bytes. Full coverage refers to these defined input-packet bins; it does not establish exhaustive functional or code coverage.
+The default sequence sends 18 packets spanning destination × size group × error type, six boundary packets, then 5,000 random packets. Size ranges are grouped as 1–13, 14–30 and 31–63 bytes. Full coverage refers to these defined input-packet bins; it does not establish exhaustive functional, code, or assertion coverage.
+
+## Assertions
+
+`[sva/router_assertions.sv](sva/router_assertions.sv)` contains five FIFO properties and three FSM properties, bound into the corresponding RTL modules. The verified Xcelium regression included these bound modules and completed without observed assertion failures.
+
+This is simulation evidence rather than formal proof. The repository does not claim exhaustive assertion coverage.
 
 ## Run the project
 
-Run the commands below from the repository root. Build outputs are written under the ignored `build/` directory, leaving the archived evidence and netlists intact.
+Run the commands below from the repository root. Build outputs are written under the ignored `build/` directory, leaving archived evidence and preserved netlists intact.
 
-### UVM simulation
+### VCS/UVM simulation
 
-Requires a licensed Synopsys VCS installation with UVM 1.2, configured in the shell. The archived simulation identifies VCS X-2025.06-SP1. No simulator or license configuration is bundled.
+Requires a licensed Synopsys VCS installation with UVM 1.2, configured in the shell.
 
 ```bash
 ./run.sh +ntb_random_seed=1
 ```
 
-Inspect `build/uvm/simulation.log` for the scoreboard totals, coverage and UVM severity counts. Waveforms are written to `build/uvm/dump.vcd`. Seed 1 is an example for a repeatable new run; the original screenshot does not record its seed.
-
-The launcher compiles `rtl/router_top.v` and `tb/testbench.sv` with their include directories. These files already include their child files, so do not compile every `.v` or `.sv` file separately.
-
-To include the existing bound assertions in a **new, unverified SVA run**:
+To compile the bound assertions in a VCS run:
 
 ```bash
 ./run.sh --sva +ntb_random_seed=1
 ```
 
-Inspect both compile and simulation logs in `build/uvm-sva/`. SVA properties are included in the repository; no clean bound-assertion regression is claimed.
+### Cadence Xcelium
+
+The latest verified regression was run with Cadence Xcelium using coverage and the bound assertion source. A representative invocation is:
+
+```bash
+xrun -64bit -sv -uvm \
+  -access +rwc \
+  -coverage all \
+  -covoverwrite \
+  rtl/router_top.v \
+  sva/router_assertions.sv \
+  tb/testbench.sv \
+  +UVM_VERBOSITY=UVM_LOW
+```
+
+Depending on include paths and your checkout layout, you may need to add `-incdir` options or run from the repository root.
 
 ### RTL lint
 
@@ -133,10 +149,8 @@ Yosys reports two limited-tristate-support warnings for the FIFO's high-impedanc
 
 ## Verification scope and remaining work
 
-- **SVA:** five FIFO properties and three FSM properties are included and bound in `sva/router_assertions.sv`. Successful execution has not been established.
-- **Timing:** the archived OpenROAD attempt failed with `ORD-2010: no technology has been read`. Experimental timing files are retained separately; the 10 ns SDC constraint is a target, not evidence of 100 MHz operation.
-- **Error checking:** bad parity is injected and forwarded bytes are compared. The scoreboard does not check the timing or value of the DUT `error` output.
+- **Timing:** the archived OpenROAD attempt failed with `ORD-2010: no technology has been read`. The 10 ns SDC constraint is a target, not evidence of achieved 100 MHz operation. No achieved slack, critical path or timing closure is claimed yet.
+- **Error checking:** bad parity is injected and forwarded bytes are compared. The scoreboard does not currently check the timing/value of the DUT `error` output.
 - **Traffic scope:** the default sequence completes one packet's writer/reader pair before starting the next. Read monitors assume continuous output bytes after the header. The timeout read sequence exists but is not started by the default test; timeout recovery, mid-packet reset and overlapping packets need dedicated verification.
 - **Checker scope:** transaction data fields use two-state `bit` types, so the current comparison does not provide dedicated X/Z detection. No gate-level simulation or formal equivalence result is claimed.
 - **Figures:** router and UVM architecture images will be added under `docs/`.
-
